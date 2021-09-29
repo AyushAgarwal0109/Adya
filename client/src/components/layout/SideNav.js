@@ -15,14 +15,16 @@ const SideNav = () => {
     <div class='sidebar'>
       <div class='dashboard'>
         <div class='dash-item'>
-          <Link onClick={onLogout} to='/home'>
-            Financial Help
-          </Link>
+          <Link to='/home'>Financial Help</Link>
         </div>
         <div class='dash-item'>
-          <Link onClick={onLogout} to='/categories'>
-            Connect with Peers
-          </Link>
+          <Link to='/categories'>Connect with Peers</Link>
+        </div>
+        <div class='dash-item'>
+          <Link to='/shgroups'>Self Help Groups</Link>
+        </div>
+        <div class='dash-item'>
+          <Link to='/settings'>Settings</Link>
         </div>
         <div class='dash-item'>
           <Link onClick={onLogout} to='/'>
