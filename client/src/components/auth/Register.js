@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 const Register = (props) => {
   const authContext = useContext(AuthContext);
@@ -9,7 +10,10 @@ const Register = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push('/');
+      // props.history.push('/');
+      const link = document.createElement('a');
+      link.href = 'http://localhost:3000/home';
+      link.click();
     }
 
     if (error === 'User already exists') {
@@ -74,8 +78,10 @@ const Register = (props) => {
   };
 
   return (
-    
-    <div className="helloform">
+    <div className='helloform form-container'>
+      <h1>
+        Account <span className='text-primary'>Register</span>{' '}
+      </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
           <label htmlFor='name'>Name</label>
@@ -161,7 +167,14 @@ const Register = (props) => {
             minLength='4'
           />
         </div>
-        <input type='submit' value='Register' className='btn btn-primary btn-block' />
+        <input
+          type='submit'
+          value='Register'
+          className='btn btn-primary btn-block'
+        />
+        {/* <Link to='/home' className='btn btn-primary btn-block'>
+          Register
+        </Link> */}
       </form>
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
+import SideNav from './components/layout/SideNav';
 import Home from './components/pages/Home';
-import About from './components/pages/About';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -13,9 +13,7 @@ import Contact from './components/layout/ContactUs';
 import AuthState from './context/auth/AuthState';
 import setAuthToken from './utils/setAuthToken';
 
-
 import './App.css';
-import ContactUs from './components/layout/ContactUs';
 import Categories from './components/pages/Categories';
 
 if (localStorage.token) {
@@ -25,26 +23,36 @@ if (localStorage.token) {
 const App = () => {
   return (
     <>
-    <AuthState>
-      <Router>
-        <Fragment className='App'>
-          <Navbar />
-          <div className='container'>
-            <Switch>
-              <PrivateRoute exact path='/' component={Home} />
-              <Route exact path='/categories' component={Categories} />
-              <Route exact path='/about' component={About} />
-              <Route exact path='/register' component={Register} />
-              <Route exact path='/login' component={Login} />
-            </Switch>
-          </div>
-        </Fragment>
-      </Router>
-    </AuthState>
-    {/* <NavbarMain />
-    <AboutMain />
-    <Contact /> */}
-
+      <AuthState>
+        <Router>
+          <Fragment className='App'>
+            {/* <Navbar /> */}
+            <div>
+              <Switch>
+                <PrivateRoute exact path='/home'>
+                  <Home />
+                </PrivateRoute>
+                <PrivateRoute exact path='/categories'>
+                  <Categories />
+                </PrivateRoute>
+                <Route exact path='/'>
+                  <NavbarMain />
+                  <AboutMain />
+                  <Contact />
+                </Route>
+                <Route exact path='/register'>
+                  <NavbarMain />
+                  <Register />
+                </Route>
+                <Route exact path='/login'>
+                  <NavbarMain />
+                  <Login />
+                </Route>
+              </Switch>
+            </div>
+          </Fragment>
+        </Router>
+      </AuthState>
     </>
   );
 };

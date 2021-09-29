@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const authContext = useContext(AuthContext);
@@ -9,7 +10,10 @@ const Login = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push('/');
+      // props.history.push('/');
+      const link = document.createElement('a');
+      link.href = 'http://localhost:3000/home';
+      link.click();
     }
 
     if (error === 'Invalid Credentials') {
@@ -78,6 +82,9 @@ const Login = (props) => {
           value='Login'
           className='btn btn-primary btn-block'
         />
+        {/* <Link to='/home' className='btn btn-primary btn-block'>
+          Login
+        </Link> */}
       </form>
     </div>
   );

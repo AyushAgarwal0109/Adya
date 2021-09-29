@@ -3,6 +3,7 @@ import axios from 'axios';
 import AuthContext from '../../context/auth/authContext';
 import Spinner from '../layout/Spinner';
 import CategoryCard from './CategoryCard';
+import SideNav from '../layout/SideNav';
 
 const Categories = () => {
   const authContext = useContext(AuthContext);
@@ -29,12 +30,17 @@ const Categories = () => {
   console.log(connect);
 
   return (
-    <div className='grid-1'>
-      {connect.length !== 0 ? (
-        <CategoryCard connectingUsers={connect} />
-      ) : (
-        <Spinner />
-      )}
+    <div className='grid-2'>
+      <div>
+        <SideNav />
+      </div>
+      <div>
+        {connect.length !== 0 ? (
+          <CategoryCard connectingUsers={connect} />
+        ) : (
+          <Spinner />
+        )}
+      </div>
     </div>
   );
 };
