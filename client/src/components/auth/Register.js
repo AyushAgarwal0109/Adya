@@ -1,12 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
-import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
+import swal from 'sweetalert';
 
 const Register = (props) => {
-  const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
-
-  const { setAlert } = alertContext;
 
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
@@ -16,7 +13,10 @@ const Register = (props) => {
     }
 
     if (error === 'User already exists') {
-      setAlert(error, 'danger');
+      swal({
+        text: error,
+        icon: 'error',
+      });
       clearErrors();
     }
 
@@ -25,25 +25,49 @@ const Register = (props) => {
 
   const [user, setUser] = useState({
     name: '',
-    email: '',
+    phone: '',
+    skill: '',
+    state: '',
+    district: '',
+    group: '',
     password: '',
     password2: '',
   });
 
-  const { name, email, password, password2 } = user;
+  const { name, phone, skill, state, district, group, password, password2 } =
+    user;
 
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (name === '' || email === '' || password === '' || password2 === '') {
-      setAlert('Please enter all fields', 'danger');
+    if (
+      name === '' ||
+      phone === '' ||
+      skill === '' ||
+      state === '' ||
+      district === '' ||
+      group === '' ||
+      password === '' ||
+      password2 === ''
+    ) {
+      swal({
+        text: 'Please enter all fields',
+        icon: 'error',
+      });
     } else if (password !== password2) {
-      setAlert('Passwords do not match', 'danger');
+      swal({
+        text: 'Passwords do not match',
+        icon: 'error',
+      });
     } else {
       register({
         name,
-        email,
+        phone,
+        skill,
+        state,
+        district,
+        group,
         password,
       });
     }
@@ -66,11 +90,53 @@ const Register = (props) => {
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
+          <label htmlFor='phone'>Phone Number</label>
           <input
-            type='email'
-            name='email'
-            value={email}
+            type='text'
+            name='phone'
+            value={phone}
+            onChange={onChange}
+            required
+            minLength='10'
+            maxLength='10'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='skill'>Skill</label>
+          <input
+            type='text'
+            name='skill'
+            value={skill}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='state'>State</label>
+          <input
+            type='text'
+            name='state'
+            value={state}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='district'>District</label>
+          <input
+            type='text'
+            name='district'
+            value={district}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='group'>Individual/Associated with SHG</label>
+          <input
+            type='text'
+            name='group'
+            value={group}
             onChange={onChange}
             required
           />
@@ -83,7 +149,7 @@ const Register = (props) => {
             value={password}
             onChange={onChange}
             required
-            minLength='6'
+            minLength='4'
           />
         </div>
         <div className='form-group'>
@@ -94,7 +160,7 @@ const Register = (props) => {
             value={password2}
             onChange={onChange}
             required
-            minLength='6'
+            minLength='4'
           />
         </div>
         <input
