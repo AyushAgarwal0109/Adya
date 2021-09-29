@@ -9,6 +9,7 @@ import AboutMain from './components/layout/About';
 import Contact from './components/layout/ContactUs';
 import Banner from '../../client/src/components/layout/Banner';
 import Schemes from '../../client/src/components/layout/Schemes';
+import Finance from '../../client/src/components/pages/FinanceHelp';
 
 import AuthState from './context/auth/AuthState';
 import setAuthToken from './utils/setAuthToken';
@@ -39,6 +40,9 @@ const App = () => {
                 </PrivateRoute>
                 <PrivateRoute exact path='/shgroups'>
                   <Shgroups />
+                </PrivateRoute>
+                <PrivateRoute exact path='/financehelp'>
+                  <Finance />
                 </PrivateRoute>
                 <PrivateRoute exact path='/settings'>
                   <Settings />

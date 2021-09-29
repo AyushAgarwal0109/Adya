@@ -58,13 +58,14 @@ const LoanForm = () => {
   };
 
   return (
-    <div className='form-container'>
+    <div className='wrapper'>
       <h1>
-        Financial <span className='text-primary'>Help</span>{' '}
+        <br/>
+      FINANCIAL HELP!
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='purpose'>Purpose</label>
+          <label htmlFor='purpose'>Enter the purpose of the Loan : </label>
           <input
             type='text'
             name='purpose'
@@ -74,7 +75,7 @@ const LoanForm = () => {
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='amount'>Amount</label>
+          <label htmlFor='amount'>Enter the Amount needed : </label>
           <input
             type='text'
             name='amount'
@@ -84,7 +85,7 @@ const LoanForm = () => {
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='assets'>Assets</label>
+          <label htmlFor='assets'>Do you have assets for the loan? </label>
           <input
             type='text'
             name='assets'
@@ -94,7 +95,7 @@ const LoanForm = () => {
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='time'>Time</label>
+          <label htmlFor='time'>Enter the time duration within which the loan is required : </label>
           <input
             type='text'
             name='time'
@@ -104,7 +105,7 @@ const LoanForm = () => {
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='scheme'>Scheme</label>
+          <label htmlFor='scheme'>Under which scheme do you want to apply? </label>
           <input
             type='text'
             name='scheme'
@@ -116,9 +117,22 @@ const LoanForm = () => {
         <input
           type='submit'
           value='Submit'
-          className='btn btn-primary btn-block'
+          className='btn-sbmt'
         />
+          <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
       </form>
+      
     </div>
   );
 };

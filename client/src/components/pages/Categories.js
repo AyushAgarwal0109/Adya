@@ -4,6 +4,7 @@ import AuthContext from '../../context/auth/authContext';
 import Spinner from '../layout/Spinner';
 import CategoryCard from './CategoryCard';
 import SideNav from '../layout/SideNav';
+import '../../assets/css/home.css';
 
 const Categories = () => {
   const authContext = useContext(AuthContext);
@@ -30,7 +31,7 @@ const Categories = () => {
   console.log(connect);
 
   return (
-    <div className='grid-2'>
+    <div className='grid-2 home-outer'>
       <div>
         <SideNav />
       </div>
