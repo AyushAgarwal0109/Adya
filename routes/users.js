@@ -14,11 +14,18 @@ router.post(
   '/',
   [
     check('name', 'Please add name').not().isEmpty(),
-    check('email', 'Please include a valid email').isEmail(),
+    check('skill', 'Please add skill').not().isEmpty(),
+    check('district', 'Please add district').not().isEmpty(),
+    check('state', 'Please add state').not().isEmpty(),
+    check('group', 'Please add group').not().isEmpty(),
+    check('phone', 'Please enter a phone number with 10 digits').isLength({
+      min: 10,
+      max: 10,
+    }),
     check(
       'password',
-      'Please enter a password with 6 or more characters'
-    ).isLength({ min: 6 }),
+      'Please enter a password with 4 or more characters'
+    ).isLength({ min: 4 }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -26,10 +33,10 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const { name, phone, skill, district, state, group, password } = req.body;
 
     try {
-      let user = await User.findOne({ email });
+      let user = await User.findOne({ phone });
 
       if (user) {
         return res.status(400).json({ msg: 'User already exists' });
@@ -37,7 +44,11 @@ router.post(
 
       user = new User({
         name,
-        email,
+        phone,
+        skill,
+        district,
+        group,
+        state,
         password,
       });
 

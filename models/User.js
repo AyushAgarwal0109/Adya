@@ -5,10 +5,26 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
-    type: String,
+  phone: {
+    type: Number,
     required: true,
     unique: true,
+  },
+  skill: {
+    type: String,
+    required: true,
+  },
+  district: {
+    type: String,
+    required: true,
+  },
+  state: {
+    type: String,
+    required: true,
+  },
+  group: {
+    type: String,
+    required: true,
   },
   password: {
     type: String,

@@ -1,12 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
-import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
+import swal from 'sweetalert';
 
 const Register = (props) => {
-  const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
-
-  const { setAlert } = alertContext;
 
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
@@ -16,7 +13,10 @@ const Register = (props) => {
     }
 
     if (error === 'User already exists') {
-      setAlert(error, 'danger');
+      swal({
+        text: error,
+        icon: 'error',
+      });
       clearErrors();
     }
 
@@ -25,25 +25,49 @@ const Register = (props) => {
 
   const [user, setUser] = useState({
     name: '',
-    email: '',
+    phone: '',
+    skill: '',
+    state: '',
+    district: '',
+    group: '',
     password: '',
     password2: '',
   });
 
-  const { name, email, password, password2 } = user;
+  const { name, phone, skill, state, district, group, password, password2 } =
+    user;
 
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (name === '' || email === '' || password === '' || password2 === '') {
-      setAlert('Please enter all fields', 'danger');
+    if (
+      name === '' ||
+      phone === '' ||
+      skill === '' ||
+      state === '' ||
+      district === '' ||
+      group === '' ||
+      password === '' ||
+      password2 === ''
+    ) {
+      swal({
+        text: 'Please enter all fields',
+        icon: 'error',
+      });
     } else if (password !== password2) {
-      setAlert('Passwords do not match', 'danger');
+      swal({
+        text: 'Passwords do not match',
+        icon: 'error',
+      });
     } else {
       register({
         name,
-        email,
+        phone,
+        skill,
+        state,
+        district,
+        group,
         password,
       });
     }
@@ -53,40 +77,89 @@ const Register = (props) => {
     
     <div className="helloform">
       <form onSubmit={onSubmit}>
-        <div className="row">
-            <div className="form-group col-md-4">
-              <label htmlFor='name'>Enter Name</label>
-              <input type='text' name='name' value={name} onChange={onChange} required />
-            </div>
-
-            <div className="form-group col-md-4">
-              <label htmlFor='email'>Enter Phone Number</label>
-              <input type='email' name='email' value={email} onChange={onChange} required />
-            </div>
-        
-            <div className="form-group col-md-4">
-              <label htmlFor='password'>Enter your Skills</label>
-              <input type='text' required />
-            </div>
+        <div className='form-group'>
+          <label htmlFor='name'>Name</label>
+          <input
+            type='text'
+            name='name'
+            value={name}
+            onChange={onChange}
+            required
+          />
         </div>
-
-        <div className="row">
-            <div className="form-group col-md-4">
-              <label htmlFor='password'>Enter your Skills</label>
-              <input type='text' required />
-            </div>
-            
+        <div className='form-group'>
+          <label htmlFor='phone'>Phone Number</label>
+          <input
+            type='text'
+            name='phone'
+            value={phone}
+            onChange={onChange}
+            required
+            minLength='10'
+            maxLength='10'
+          />
         </div>
-
-        <div className="row">
-            <div className="form-group col-md-6">
-              <label htmlFor='password'>Enter Pin</label>
-              <input type='password' name='password' value={password} onChange={onChange} required minLength='6' />
-            </div>
-            <div className='form-group col-md-6'>
-              <label htmlFor='password2'>Re-Enter Pin</label>
-              <input type='password' name='password2' value={password2} onChange={onChange} required minLength='6' />
-            </div>
+        <div className='form-group'>
+          <label htmlFor='skill'>Skill</label>
+          <input
+            type='text'
+            name='skill'
+            value={skill}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='state'>State</label>
+          <input
+            type='text'
+            name='state'
+            value={state}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='district'>District</label>
+          <input
+            type='text'
+            name='district'
+            value={district}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='group'>Individual/Associated with SHG</label>
+          <input
+            type='text'
+            name='group'
+            value={group}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='password'>Password</label>
+          <input
+            type='password'
+            name='password'
+            value={password}
+            onChange={onChange}
+            required
+            minLength='4'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='password2'>Confirm Password</label>
+          <input
+            type='password'
+            name='password2'
+            value={password2}
+            onChange={onChange}
+            required
+            minLength='4'
+          />
         </div>
         <input type='submit' value='Register' className='btn btn-primary btn-block' />
       </form>
