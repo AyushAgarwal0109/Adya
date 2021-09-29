@@ -70,7 +70,7 @@ const LoanForm = () => {
             type='text'
             name='purpose'
             value={purpose}
-            onChange={onChange}
+            onChange={onChange} autoComplete="off"
             required
           />
         </div>
@@ -80,7 +80,7 @@ const LoanForm = () => {
             type='text'
             name='amount'
             value={amount}
-            onChange={onChange}
+            onChange={onChange} autoComplete="off"
             required
           />
         </div>
@@ -90,7 +90,7 @@ const LoanForm = () => {
             type='text'
             name='assets'
             value={assets}
-            onChange={onChange}
+            onChange={onChange} autoComplete="off"
             required
           />
         </div>
@@ -100,7 +100,7 @@ const LoanForm = () => {
             type='text'
             name='time'
             value={time}
-            onChange={onChange}
+            onChange={onChange} autoComplete="off"
             required
           />
         </div>
@@ -110,7 +110,7 @@ const LoanForm = () => {
             type='text'
             name='scheme'
             value={scheme}
-            onChange={onChange}
+            onChange={onChange} autoComplete="off"
             required
           />
         </div>

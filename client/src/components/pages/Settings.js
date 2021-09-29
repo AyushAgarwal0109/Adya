@@ -67,7 +67,7 @@ const Settings = () => {
               <span>
                 <img className="updater" src={Updatelogo}></img>
               </span>
-              <input type='password' name='password' />
+              <input type='password' name='password' value={"****"} />
             </div>
         </div>
         <input

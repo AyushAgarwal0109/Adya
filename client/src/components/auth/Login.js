@@ -66,6 +66,7 @@ const Login = (props) => {
             name='phone'
             value={phone}
             onChange={onChange}
+            autoComplete="off"
             required
           />
         </div>
@@ -74,7 +75,7 @@ const Login = (props) => {
           <input
             type='password'
             name='password'
-            value={password}
+            value={password} autoComplete="off"
             onChange={onChange}
             required
           />

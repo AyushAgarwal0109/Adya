@@ -16,8 +16,12 @@ const Banner = () => {
               WHERE PREPERATION MEETS OPPORTUNITY.
             </div>
             <div className=''>
-              <button className='button-banner'>Read More!</button>
+              <a href='http://localhost:3000/#about'>
+                <button className='button-banner'>Read More!</button>
+              </a>
+              <a href='http://localhost:3000/#contact'>
               <button className='button-banner'>Contact Us!</button>
+              </a>
             </div>
           </div>
         </div>

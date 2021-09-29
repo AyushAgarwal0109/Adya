@@ -16,32 +16,32 @@ const Shgroups = () => {
         </h1>
         <div className='form-group'>
           <label htmlFor='name'>Enter the name of your Self Help Group : </label>
-          <input type='text' required/>
+          <input type='text' autoComplete="off" required/>
         </div>
 
         <div className='form-group'>
           <label htmlFor='representative'>Name of representative of SHG : </label>
-          <input type='text' required/>
+          <input type='text' autoComplete="off" required/>
         </div>
 
         <div className='form-group'>
           <label htmlFor='members'>Number of members in the SHG : </label>
-          <input type='text' name='members' required/>
+          <input type='text' autoComplete="off" name='members' required/>
         </div>
 
         <div className='form-group'>
           <label htmlFor='phone'>Enter Phone number to contact your group : </label>
-          <input type='text' minLength='10' maxLength='10' required />
+          <input type='text' autoComplete="off" minLength='10' maxLength='10' required />
         </div>
 
         <div className='form-group'>
           <label htmlFor='business'>What kind of business is run by your Self Help Group? </label>
-          <input type='text' required/>
+          <input type='text' autoComplete="off" required/>
         </div>
 
         <div className='form-group'>
           <label htmlFor='assistance'>What do you require our assistance? </label>
-          <input type='text' required/>
+          <input type='text' autoComplete="off" required/>
         </div>
         
         <input
