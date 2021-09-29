@@ -161,7 +161,7 @@ img {
 /* Grid */
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 350px 800px;
   grid-gap: 2rem;
 }
 
@@ -407,18 +407,18 @@ table th {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #fc2956; 
+  background: #fc2956;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #fc2956; 
+  background: #fc2956;
 }
 
 /* Mobile Styles */

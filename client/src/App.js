@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import SideNav from './components/layout/SideNav';
 import Home from './components/pages/Home';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
@@ -17,7 +15,8 @@ import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
 import Categories from './components/pages/Categories';
-import About from './components/layout/About';
+import Shgroups from './components/pages/Shgroups';
+import Settings from './components/pages/Settings';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -37,6 +36,12 @@ const App = () => {
                 </PrivateRoute>
                 <PrivateRoute exact path='/categories'>
                   <Categories />
+                </PrivateRoute>
+                <PrivateRoute exact path='/shgroups'>
+                  <Shgroups />
+                </PrivateRoute>
+                <PrivateRoute exact path='/settings'>
+                  <Settings />
                 </PrivateRoute>
                 <Route exact path='/'>
                   <NavbarMain />
