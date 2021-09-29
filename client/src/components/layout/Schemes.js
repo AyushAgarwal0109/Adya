@@ -1,3 +1,5 @@
+import '../../assets/css/schemes.css';
+
 const Schemes = () => {
     return ( 
         <div>
