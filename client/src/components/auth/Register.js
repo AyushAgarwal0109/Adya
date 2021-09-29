@@ -50,58 +50,45 @@ const Register = (props) => {
   };
 
   return (
-    <div className='form-container'>
-      <h1>
-        Account <span className='text-primary'>Register</span>{' '}
-      </h1>
+    
+    <div className="helloform">
       <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label htmlFor='name'>Name</label>
-          <input
-            type='text'
-            name='name'
-            value={name}
-            onChange={onChange}
-            required
-          />
+        <div className="row">
+            <div className="form-group col-md-4">
+              <label htmlFor='name'>Enter Name</label>
+              <input type='text' name='name' value={name} onChange={onChange} required />
+            </div>
+
+            <div className="form-group col-md-4">
+              <label htmlFor='email'>Enter Phone Number</label>
+              <input type='email' name='email' value={email} onChange={onChange} required />
+            </div>
+        
+            <div className="form-group col-md-4">
+              <label htmlFor='password'>Enter your Skills</label>
+              <input type='text' required />
+            </div>
         </div>
-        <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
-          <input
-            type='email'
-            name='email'
-            value={email}
-            onChange={onChange}
-            required
-          />
+
+        <div className="row">
+            <div className="form-group col-md-4">
+              <label htmlFor='password'>Enter your Skills</label>
+              <input type='text' required />
+            </div>
+            
         </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            onChange={onChange}
-            required
-            minLength='6'
-          />
+
+        <div className="row">
+            <div className="form-group col-md-6">
+              <label htmlFor='password'>Enter Pin</label>
+              <input type='password' name='password' value={password} onChange={onChange} required minLength='6' />
+            </div>
+            <div className='form-group col-md-6'>
+              <label htmlFor='password2'>Re-Enter Pin</label>
+              <input type='password' name='password2' value={password2} onChange={onChange} required minLength='6' />
+            </div>
         </div>
-        <div className='form-group'>
-          <label htmlFor='password2'>Confirm Password</label>
-          <input
-            type='password'
-            name='password2'
-            value={password2}
-            onChange={onChange}
-            required
-            minLength='6'
-          />
-        </div>
-        <input
-          type='submit'
-          value='Register'
-          className='btn btn-primary btn-block'
-        />
+        <input type='submit' value='Register' className='btn btn-primary btn-block' />
       </form>
     </div>
   );

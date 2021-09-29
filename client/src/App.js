@@ -7,12 +7,18 @@ import About from './components/pages/About';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import PrivateRoute from './components/routing/PrivateRoute';
+import NavbarMain from './components/layout/NavbarMain';
+import AboutMain from './components/layout/About';
+import Contact from './components/layout/ContactUs';
 
 import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import setAuthToken from './utils/setAuthToken';
+
+
 import './App.css';
+import ContactUs from './components/layout/ContactUs';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -20,6 +26,7 @@ if (localStorage.token) {
 
 const App = () => {
   return (
+    <>
     <AuthState>
       <ContactState>
         <AlertState>
@@ -40,6 +47,11 @@ const App = () => {
         </AlertState>
       </ContactState>
     </AuthState>
+    {/* <NavbarMain />
+    <AboutMain />
+    <Contact /> */}
+
+    </>
   );
 };
 
