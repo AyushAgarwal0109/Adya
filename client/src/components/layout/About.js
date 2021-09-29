@@ -3,6 +3,8 @@ import AboutPhoto from '../../assets/images/about-photo.png';
 
 const About = () => {
     return ( 
+        <>
+        <div className="hello-about" id="about"></div>
         <div className="about-main">
             <div className="about-inner">
                 <div className="about-left">
@@ -19,6 +21,7 @@ const About = () => {
                 </div>
             </div>
         </div>
+        </>
      );
 }
  

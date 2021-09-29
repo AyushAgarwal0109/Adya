@@ -9,12 +9,15 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import NavbarMain from './components/layout/NavbarMain';
 import AboutMain from './components/layout/About';
 import Contact from './components/layout/ContactUs';
+import Banner from '../../client/src/components/layout/Banner';
+import Schemes from '../../client/src/components/layout/Schemes';
 
 import AuthState from './context/auth/AuthState';
 import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
 import Categories from './components/pages/Categories';
+import About from './components/layout/About';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -37,12 +40,17 @@ const App = () => {
                 </PrivateRoute>
                 <Route exact path='/'>
                   <NavbarMain />
+                  <Banner />
                   <AboutMain />
                   <Contact />
                 </Route>
                 <Route exact path='/register'>
                   <NavbarMain />
                   <Register />
+                </Route>
+                <Route exact path='/schemes'>
+                  <NavbarMain />
+                  <Schemes />
                 </Route>
                 <Route exact path='/login'>
                   <NavbarMain />

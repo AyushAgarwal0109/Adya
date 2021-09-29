@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
+import '../../assets/css/form.css';
 
 const Login = (props) => {
   const authContext = useContext(AuthContext);
@@ -52,9 +53,10 @@ const Login = (props) => {
   };
 
   return (
-    <div className='form-container'>
+    <div className="wrapper-out">
+    <div className='wrapper wrapper2'>
       <h1>
-        Account <span className='text-primary'>Login</span>{' '}
+        LOGIN.
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
@@ -80,12 +82,26 @@ const Login = (props) => {
         <input
           type='submit'
           value='Login'
-          className='btn btn-primary btn-block'
+          className='btn-sbmt'
         />
         {/* <Link to='/home' className='btn btn-primary btn-block'>
           Login
         </Link> */}
+
+      <ul class="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+      </ul>
       </form>
+    </div>
     </div>
   );
 };

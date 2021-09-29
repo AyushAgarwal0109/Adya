@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
+import '../../assets/css/form.css';
 
 const Register = (props) => {
   const authContext = useContext(AuthContext);
@@ -78,104 +79,123 @@ const Register = (props) => {
   };
 
   return (
-    <div className='helloform form-container'>
+    <div className="wrapper-out">
+    <div className='wrapper wrapper1'>
       <h1>
-        Account <span className='text-primary'>Register</span>{' '}
+        SIGN UP.
       </h1>
       <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label htmlFor='name'>Name</label>
-          <input
-            type='text'
-            name='name'
-            value={name}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='phone'>Phone Number</label>
-          <input
-            type='text'
-            name='phone'
-            value={phone}
-            onChange={onChange}
-            required
-            minLength='10'
-            maxLength='10'
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='skill'>Skill</label>
-          <input
-            type='text'
-            name='skill'
-            value={skill}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='state'>State</label>
-          <input
-            type='text'
-            name='state'
-            value={state}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='district'>District</label>
-          <input
-            type='text'
-            name='district'
-            value={district}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='group'>Individual/Associated with SHG</label>
-          <input
-            type='text'
-            name='group'
-            value={group}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            onChange={onChange}
-            required
-            minLength='4'
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password2'>Confirm Password</label>
-          <input
-            type='password'
-            name='password2'
-            value={password2}
-            onChange={onChange}
-            required
-            minLength='4'
-          />
-        </div>
-        <input
-          type='submit'
-          value='Register'
-          className='btn btn-primary btn-block'
-        />
+          <div className="row">
+            <div className='form-group col-md-4'>
+              <label htmlFor='name'>Name</label>
+              <input
+                type='text'
+                name='name'
+                value={name}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <div className='form-group col-md-4'>
+              <label htmlFor='phone'>Phone Number</label>
+              <input
+                type='text'
+                name='phone'
+                value={phone}
+                onChange={onChange}
+                required
+                minLength='10'
+                maxLength='10'
+              />
+            </div>
+            <div className='form-group col-md-4'>
+              <label htmlFor='skill'>Skill</label>
+              <input
+                type='text'
+                name='skill'
+                value={skill}
+                onChange={onChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className='form-group col-md-4'>
+              <label htmlFor='state'>State</label>
+              <input
+                type='text'
+                name='state'
+                value={state}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <div className='form-group col-md-4'>
+              <label htmlFor='district'>District</label>
+              <input
+                type='text'
+                name='district'
+                value={district}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <div className='form-group col-md-4'>
+              <label htmlFor='group'>Individual/Associated with SHG</label>
+              <input
+                type='text'
+                name='group'
+                value={group}
+                onChange={onChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className='form-group col-md-6'>
+              <label htmlFor='password'>Password</label>
+              <input
+                type='password'
+                name='password'
+                value={password}
+                onChange={onChange}
+                required
+                minLength='4'
+              />
+            </div>
+            <div className='form-group col-md-6'>
+              <label htmlFor='password2'>Confirm Password</label>
+              <input
+                type='password'
+                name='password2'
+                value={password2}
+                onChange={onChange}
+                required
+                minLength='4'
+              />
+            </div>
+          </div>
+        <input type='submit' value='Register' className='btn-sbmt'/>
         {/* <Link to='/home' className='btn btn-primary btn-block'>
           Register
         </Link> */}
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
       </form>
+    </div>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import '../../assets/css/navbar.css';
 import LogoMain from '../../assets/logos/logo-main.png';
 import { Link } from 'react-router-dom';
-import BannerPhoto from '../../assets/images/banner-photo.png';
 
 const NavbarMain = () => {
   return (
@@ -23,12 +22,12 @@ const NavbarMain = () => {
         </div>
         <input type='checkbox' id='nav-check'></input>
         <div className='nav-links'>
-          <Link to='/' className='jhk'>
+          <a href='#home' className='jhk'>
             HOME
-          </Link>
-          <Link to='/'>ABOUT</Link>
-          <Link to='/'>SCHEMES</Link>
-          <Link to='/'>CONTACT</Link>
+          </a>
+          <a href='#about'>ABOUT</a>
+          <Link to='/schemes'>SCHEMES</Link>
+          <a href='#contact'>CONTACT</a>
           <Link to='/login' className='loginbtn'>
             LOGIN
           </Link>
@@ -37,24 +36,6 @@ const NavbarMain = () => {
           </Link>
         </div>
       </nav>
-
-      <div className='banner-main'>
-        <div className='banner-main-inner'>
-          <div className='banner-left'>
-            <img className='banner-photo' src={BannerPhoto}></img>
-          </div>
-          <div className='banner-right'>
-            <div className='main-heading'>Adya</div>
-            <div className='sub-heading'>
-              WHERE PREPERATION MEETS OPPORTUNITY.
-            </div>
-            <div className=''>
-              <button className='button-banner'>Read More!</button>
-              <button className='button-banner'>Contact Us!</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
