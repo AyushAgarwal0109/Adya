@@ -10,6 +10,7 @@ import Contact from './components/layout/ContactUs';
 import Banner from '../../client/src/components/layout/Banner';
 import Schemes from '../../client/src/components/layout/Schemes';
 import Finance from '../../client/src/components/pages/FinanceHelp';
+import News from './components/layout/Newsletter';
 
 import AuthState from './context/auth/AuthState';
 import setAuthToken from './utils/setAuthToken';
@@ -52,6 +53,7 @@ const App = () => {
                   <Banner />
                   <AboutMain />
                   <Contact />
+                  <News />
                 </Route>
                 <Route exact path='/register'>
                   <NavbarMain />

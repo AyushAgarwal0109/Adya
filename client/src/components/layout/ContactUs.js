@@ -3,7 +3,9 @@ import '../../assets/css/contact.css'
 
 const ContactUs = () => {
     return ( 
-        <div className="contact" id="contact">
+        <>
+        <div className="hello-cons" id="contact"></div>
+        <div className="contact">
             <div className="contact-inner">
                 <div className="contact-left">
                     <img className="contact-photo" src={ContactPhoto}></img>
@@ -20,6 +22,7 @@ const ContactUs = () => {
                 </div>
             </div>
         </div>
+        </>
      );
 }
  

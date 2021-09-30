@@ -8,6 +8,11 @@
     position: relative;
 }
 
+.hello-cons{
+    position: relative;
+    top: -90px;
+}
+
 .main-headingss{
     font-family: 'Poppins', sans-serif;
     font-size: 5rem;
