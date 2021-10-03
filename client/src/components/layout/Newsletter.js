@@ -56,7 +56,7 @@ const Newletter = () => {
                     type='email'
                     name='newsletter'
                     onChange={onChange}
-                    placeholder='xyz@gmail.com'
+                    placeholder='example@xyz.com'
                     autoComplete='off'
                     required
                   />

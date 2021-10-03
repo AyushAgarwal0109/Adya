@@ -79,7 +79,7 @@ const Register = (props) => {
   };
 
   return (
-    <div className="wrapper-out">
+    <div className="wrapper-out wrapper-out-2">
     <div className='wrapper wrapper1'>
       <h1>
         SIGN UP.
@@ -94,6 +94,7 @@ const Register = (props) => {
                 value={name}
                 onChange={onChange}
                 required
+                autoComplete="off"
               />
             </div>
             <div className='form-group col-md-4'>
@@ -106,6 +107,7 @@ const Register = (props) => {
                 required
                 minLength='10'
                 maxLength='10'
+                autoComplete="off"
               />
             </div>
             <div className='form-group col-md-4'>
@@ -116,6 +118,7 @@ const Register = (props) => {
                 value={skill}
                 onChange={onChange}
                 required
+                autoComplete="off"
               />
             </div>
           </div>
@@ -129,6 +132,7 @@ const Register = (props) => {
                 value={state}
                 onChange={onChange}
                 required
+                autoComplete="off"
               />
             </div>
             <div className='form-group col-md-4'>
@@ -139,6 +143,7 @@ const Register = (props) => {
                 value={district}
                 onChange={onChange}
                 required
+                autoComplete="off"
               />
             </div>
             <div className='form-group col-md-4'>
@@ -149,6 +154,7 @@ const Register = (props) => {
                 value={group}
                 onChange={onChange}
                 required
+                autoComplete="off"
               />
             </div>
           </div>
@@ -163,6 +169,7 @@ const Register = (props) => {
                 onChange={onChange}
                 required
                 minLength='4'
+                autoComplete="off"
               />
             </div>
             <div className='form-group col-md-6'>
@@ -174,6 +181,7 @@ const Register = (props) => {
                 onChange={onChange}
                 required
                 minLength='4'
+                autoComplete="off"
               />
             </div>
           </div>

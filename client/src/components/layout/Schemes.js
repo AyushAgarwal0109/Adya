@@ -18,7 +18,7 @@ const Schemes = () => {
                 <h1 className="title">
                 MAHILA UDYAM NIDHI SCHEME
                 </h1>
-                <img className="image" style={{position: 'relative', top: '70px', height: '200px' }} src={Udham} alt="" />
+                <img className="image image1" src={Udham} alt="" />
                 </div>
                 <div className="back">
                 <h3 className="synopsis">MAHILA UDYAM NIDHI SCHEME</h3>
@@ -36,7 +36,7 @@ const Schemes = () => {
                 <h1 className="title">
                     BHARATIYA MAHILA BANK BUSINESS LOAN
                 </h1>
-                <img className="image" style={{position: 'relative', top: '70px', height: '200px' }} src={Bmb} alt="" />
+                <img className="image image1" src={Bmb} alt="" />
                 </div>
                 <div className="back">
                 <h3 className="synopsis">BHARATIYA MAHILA BANK BUSINESS LOAN</h3>
@@ -45,14 +45,14 @@ const Schemes = () => {
             </div>
             </div>
 
-            <div className="card-container  col-sm-4">
+            <div className="card-container col-sm-4">
                 <br/><br/><br/>
             <div className="card">
                 <div className="front">
                 <h1 className="title">
                 DENA SHAKTI <br/> SCHEME
                 </h1>
-                <img className="image" style={{position: 'relative', top: '70px', height: '200px' }} src={ds} alt="" />
+                <img className="image image1" src={ds} alt="" />
                 </div>
                 <div className="back">
                 <h3 className="synopsis">DENA SHAKTI SCHEME</h3>
@@ -62,18 +62,15 @@ const Schemes = () => {
                 </div>
             </div>
             </div>
-            </div>
 
-
-            <div className="row" align="center">
             <div className="card-container col-sm-4">
                 <br/><br/><br/>
             <div className="card">
                 <div className="front">
                 <h1 className="title">
-                PRADHAN MANTRI ROZGAR YOJANA
+                PM ROZGAR YOJANA
                 </h1>
-                <img className="image" style={{position: 'relative', top: '70px', height: '200px' }} src={mudra} alt="" />
+                <img className="image image1" src={mudra} alt="" />
                 </div>
                 <div className="back">
                 <h3 className="synopsis">PRADHAN MANTRI ROZGAR YOJANA</h3>
@@ -82,14 +79,14 @@ const Schemes = () => {
             </div>
             </div>
 
-            <div className="card-container  col-sm-4">
+            <div className="card-container col-sm-4">
                 <br/><br/><br/>
             <div className="card">
                 <div className="front">
                 <h1 className="title">
                 UDYOGINI <br/> SCHEME
                 </h1>
-                <img className="image" style={{position: 'relative', top: '70px', height: '200px' }} src={udyogini} alt="" />
+                <img className="image image1" src={udyogini} alt="" />
                 </div>
                 <div className="back">
                 <h3 className="synopsis">UDYOGINI <br/> SCHEME</h3>
@@ -105,7 +102,7 @@ const Schemes = () => {
                 <h1 className="title">
                 ORIENT MAHILA VIKAS YOJANA
                 </h1>
-                <img className="image" style={{position: 'relative', top: '70px', height: '200px' }} src={orient} alt="" />
+                <img className="image image1" src={orient} alt="" />
                 </div>
                 <div className="back">
                 <h3 className="synopsis">ORIENT MAHILA VIKAS YOJANA</h3>
