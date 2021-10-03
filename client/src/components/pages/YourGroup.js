@@ -1,52 +1,50 @@
-import axios from 'axios';
-import React, { useEffect, useState, useContext } from 'react';
+import '../../assets/css/home.css';
 import SideNav from '../layout/SideNav';
 import AuthContext from '../../context/auth/authContext';
 import Avatar from '../../assets/logos/avatar1.png'
-import Spinner from '../layout/Spinner';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 
-const GroupInfo = () => {
+const YourGroup = () => {
 
-  const authContext = useContext(AuthContext);
-  const { user } = authContext;
+    const authContext = useContext(AuthContext);
+    const { user } = authContext;
+  
+    const [YourGroup, setYourGroup] = useState([])
 
-  const [shgData, setshgData] = useState([])
+    useEffect(() => {
+        authContext.loadUser();
+        // eslint-disable-next-line
+      }, []);
 
-  useEffect(() => {
-    authContext.loadUser();
-    // eslint-disable-next-line
-  }, []);
+      const getYourGroup = async () => {
+        try {
+          const res = await axios.get('/api/group');
+          setYourGroup(res.data)
+          
+        } catch (err) {
+          console.log(err);
+        }
+      };
+    
+      useEffect(() => {
+        getYourGroup();
+      }, []);
 
-
-  const getGroup = async () => {
-    try {
-      const res = await axios.get('/api/group');
-      console.log(res.data);
-      setshgData(res.data)
-      
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    getGroup();
-  }, []);
-
-  return (
-    <>
-      <div className='grid-2 home-outer'>
+    return ( 
+        <div className='grid-2 home-outer'>
         <div>
           <SideNav />
         </div>
+        <div>
         <div className='mainin'>
           <div className='mainin-1'>
             <br />
             <br />
-            <h1>List of Available SHGs </h1>
+            <h1>Your Self Help Group </h1>
             <div>
-            {shgData && shgData.map((data) => {
-        if (data.business===user.skill)
+            {YourGroup && YourGroup.map((data) => {
+        if (data.phone===user.phone)
           return (
             <div className='cardss row' align="left">
               <div className='cards-inner-1 col-sm-2'>
@@ -68,8 +66,8 @@ const GroupInfo = () => {
                     <b>Business</b> {'->'} {data.business}
                   </li>
                   <li align="left">
-                    <button className="btn-sbmt" style={{'margin-top': '30px', 'backgroundColor': '#fc2956', 'color': 'white', 'width': '150px'}}>
-                        Join
+                    <button className="btn-sbmt" style={{'margin-top': '30px', 'backgroundColor': '#fc2956', 'color': 'white', 'width': '200px', 'position': 'relative', 'left': '-50px'}}>
+                        See Requests >
                     </button>
                   </li>
                 </ul>
@@ -83,9 +81,9 @@ const GroupInfo = () => {
 
           </div>
         </div>
+        </div>
       </div>
-    </>
-  );
-};
-
-export default GroupInfo;
+     );
+}
+ 
+export default YourGroup;

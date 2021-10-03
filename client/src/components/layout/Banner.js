@@ -13,7 +13,7 @@ const Banner = () => {
           <div className='banner-right'>
             <div className='main-heading'>Adya</div>
             <div className='sub-heading'>
-              WHERE PREPERATION MEETS OPPORTUNITY.
+              WHERE PREPARATION MEETS OPPORTUNITY.
             </div>
             <div className=''>
               <a href='http://localhost:3000/#about'>

@@ -9,11 +9,13 @@ const CategoryCard = ({ connectingUsers }) => {
   const { user } = authContext;
 
   return (
-    <div className=''>
+    <div className='mainin-1 right-right' align="center">
+      <h1>Connect with Peers </h1>
       {connectingUsers.map((connect) => {
         if (connect.skill === user.skill && connect.district === user.district)
           return (
-            <div className='cardss row'>
+
+            <div className='cardss row' align="left">
               <div className='cards-inner-1 col-sm-2'>
                 <img className='avatar-card' src={Avatar}></img>
               </div>

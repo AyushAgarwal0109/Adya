@@ -1,10 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import SideNav from '../layout/SideNav';
-import GroupInfo from './GroupInfo';
+import YourGroup from './YourGroup';
 import axios from 'axios';
 import swal from 'sweetalert';
 import AuthContext from '../../context/auth/authContext';
 import '../../assets/css/home.css';
+import GroupInfo from './GroupInfo';
+import Spinner from '../layout/Spinner'
 
 const Shgroups = () => {
   const authContext = useContext(AuthContext);
@@ -70,6 +72,9 @@ const Shgroups = () => {
     }
   };
 
+  if(user !==null && (user.group==='Individual' || user.group==='individual'))
+    return (<GroupInfo />)
+  else{
   if (!submitted)
     return (
       <div className='grid-2 home-outer'>
@@ -175,7 +180,8 @@ const Shgroups = () => {
         </div>
       </div>
     );
-  else return <GroupInfo />;
+  else return <YourGroup />;
+    }
 };
 
 export default Shgroups;

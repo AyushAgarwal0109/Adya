@@ -307,3 +307,9 @@ min-height: 100vh;
   left: -10px;
   cursor: pointer;
 }
+
+.right-right{
+  position: relative;
+  left: 100px;
+  padding-top: 50px;
+}
