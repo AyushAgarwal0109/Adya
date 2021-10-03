@@ -46,9 +46,6 @@ const App = () => {
                 <PrivateRoute exact path='/financehelp'>
                   <Finance />
                 </PrivateRoute>
-                <PrivateRoute exact path='/groupInfo'>
-                  <GroupInfo />
-                </PrivateRoute>
                 <PrivateRoute exact path='/settings'>
                   <Settings />
                 </PrivateRoute>

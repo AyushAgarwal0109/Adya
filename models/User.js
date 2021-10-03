@@ -18,6 +18,10 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  isSubmitted: {
+    type: Boolean,
+    default: false,
+  },
   state: {
     type: String,
     required: true,

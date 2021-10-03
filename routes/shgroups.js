@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth');
 const Shgroup = require('../models/Shgroups');
+const User = require('../models/User');
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
     const groups = await Shgroup.find();
     res.json(groups);
@@ -12,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
   const { name, representative, members, phone, business, assistance } =
     req.body;
 
@@ -30,9 +32,15 @@ router.post('/', async (req, res) => {
       phone,
       business,
       assistance,
+      user: req.user.id,
     });
 
+    // console.log(shgroup.user, req.user.id);
+    let user = await User.findById(req.user.id);
+    if (user) user.isSubmitted = true;
+
     await shgroup.save();
+    await user.save();
     res.json({ msg: 'Form submitted successfully!' });
   } catch (err) {
     console.error(err.message);
