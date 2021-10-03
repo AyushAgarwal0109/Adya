@@ -142,7 +142,7 @@ const Shgroups = () => {
 
           <div className='form-group'>
             <label htmlFor='assistance'>
-              What do you require our assistance?{' '}
+              Why do you require our assistance?{' '}
             </label>
             <input
               name='assistance'

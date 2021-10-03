@@ -207,27 +207,32 @@
     .nav > .nav-links {
       position: absolute;
       display: block;
-      width: 100%;
+      width: 105%;
       background: white;
       height: 0px;
       transition: all 0.3s ease-in;
       overflow-y: hidden;
       top: 80px;
-      left: 0px;
+      left: -10px;
     }
   
     .nav > .nav-links > a {
       display: block;
       width: 100%;
       font-size: 15px;
-      color: #fc2956 !important;
+      color: #fc2956;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 400;
       text-align: center;
     }
+
+    .nav > .nav-links > a:focus{
+      color: white !important;
+    }
+
     .signupbtn, .loginbtn{
-        background-color: white;
+        background-color: #fc2956;
     }
   
     .nav > #nav-check:not(:checked) + .nav-links {

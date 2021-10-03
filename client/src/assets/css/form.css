@@ -184,3 +184,48 @@
 .wrapper1{
     width:80%;
 }
+
+@media screen and (max-width:415px) {
+  .wrapper2{
+    width: 80%;
+    top: 52%;
+  }
+  .wrapper1{
+    top: 100%;
+  }
+  .wrapper-out-2{
+    height: 190vh;
+  }
+  .btn-sbmt{
+    width: 200px;
+  }
+}
+
+@media screen and (max-width:376px) {
+  .wrapper2{
+    width: 95%;
+  }
+  .wrapper1{
+    top: 110%;
+  }
+  .wrapper-out-2{
+    height: 210vh;
+  }
+
+}
+
+@media screen and (max-width:321px) {
+  .wrapper2{
+    width: 95%;
+  }
+  .btn-sbmt{
+    width: 200px;
+  }
+  .wrapper1{
+    top: 120%;
+  }
+  .wrapper-out-2{
+    height: 230vh;
+  }
+
+}

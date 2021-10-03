@@ -1,19 +1,26 @@
 
     .scheme-outer{
         padding: 50px;
-        position: relative;
-        left: 60px;
     }
   
   .scheme-outer img {
     display: block;
     width: 100%;
+    border-radius: 20px;
+    border: 5px solid #fc2956;
   }
   
   .scheme-outer .card-container {
     margin: 20px;
     width: 400px;
+  }
 
+  .image1{
+    position: relative;
+    top: 160px; 
+    left: 25px !important;
+    width: 350px !important;
+    height: 250px; 
   }
   
   .scheme-outer .front, .scheme-outer .back {
@@ -53,7 +60,11 @@
     box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
     overflow: hidden;
     transition: 0.5s;
+    text-align: center;
     transform-style: preserve-3d;
+    border-radius: 30px;
+    position: relative;
+    left: 60px;
   }
   .scheme-outer .card:hover {
     transform: rotateY(180deg);
@@ -116,18 +127,6 @@
     transition: 0.5s;
     margin: 0 2px 0;
     font-weight: 100;
-  }
-  .scheme-outer .btn.secondary {
-    border-color: #DE6262;
-    color: #DE6262;
-  }
-  .scheme-outer .btn.secondary:hover {
-    background: #DE6262;
-  }
-  .scheme-outer .btn:hover {
-    cursor: pointer;
-    background: #FFB88C;
-    color: white;
   }
   .scheme-outer .btn i {
     margin: 0 5px 0;
@@ -219,3 +218,47 @@
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 1025px) {
+    .scheme-outer .card{
+      left: 20px;
+    }
+  }
+  @media screen and (max-width: 769px) {
+    .scheme-outer .card{
+      left: 120px;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
+    .scheme-outer .card{
+      left: -15px;
+      width: 300px;
+      height: 600px;
+    }
+    .image1{
+      position: relative;
+      top: 180px; 
+      left: 25px !important;
+      width: 250px !important;
+      height: 300px; 
+    }
+  }
+
+  @media screen and (max-width: 376px) {
+    .scheme-outer .card{
+      left: -30px;
+      width: 300px;
+      height: 600px;
+    }
+  }
+
+  @media screen and (max-width: 361px) {
+    .scheme-outer .card{
+      left: -40px;
+      width: 300px;
+      height: 600px;
+    }
+  }
+
+
