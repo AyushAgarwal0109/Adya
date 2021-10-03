@@ -54,6 +54,9 @@ const Shgroups = () => {
           text: res.data.msg,
           icon: 'success',
         });
+        const link = document.createElement('a');
+        link.href = 'http://localhost:3000/groupInfo';
+        link.click();
       } catch (err) {
         swal({
           text: 'Group already registered.',

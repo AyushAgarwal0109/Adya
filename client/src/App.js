@@ -19,6 +19,7 @@ import './App.css';
 import Categories from './components/pages/Categories';
 import Shgroups from './components/pages/Shgroups';
 import Settings from './components/pages/Settings';
+import GroupInfo from './components/pages/GroupInfo';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -44,6 +45,9 @@ const App = () => {
                 </PrivateRoute>
                 <PrivateRoute exact path='/financehelp'>
                   <Finance />
+                </PrivateRoute>
+                <PrivateRoute exact path='/groupInfo'>
+                  <GroupInfo />
                 </PrivateRoute>
                 <PrivateRoute exact path='/settings'>
                   <Settings />

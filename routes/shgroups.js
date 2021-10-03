@@ -2,6 +2,16 @@ const express = require('express');
 const router = express.Router();
 const Shgroup = require('../models/Shgroups');
 
+router.get('/', async (req, res) => {
+  try {
+    const groups = await Shgroup.find();
+    res.json(groups);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 router.post('/', async (req, res) => {
   const { name, representative, members, phone, business, assistance } =
     req.body;
