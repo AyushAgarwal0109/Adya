@@ -82,4 +82,38 @@ router.post(
   }
 );
 
+router.put('/:id', async (req, res) => {
+  const { name, phone, skill, district, state, group, password } = req.body;
+
+  //Build Contact object
+  const userFields = {};
+  if (name) userFields.name = name;
+  if (phone) userFields.phone = phone;
+  if (skill) userFields.skill = skill;
+  if (district) userFields.district = district;
+  if (state) userFields.state = state;
+  if (group) userFields.group = group;
+  if (password) {
+    const salt = await bcrypt.genSalt(10);
+    userFields.password = await bcrypt.hash(password, salt);
+  }
+
+  try {
+    let user = await User.find(req.params.id);
+
+    if (!user) return res.status(404).json({ msg: 'User not found' });
+
+    user = await User.findByIdAndUpdate(
+      req.params.id,
+      { $set: userFields },
+      { new: true }
+    );
+
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 module.exports = router;
