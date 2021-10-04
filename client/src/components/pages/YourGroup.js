@@ -1,5 +1,7 @@
 import '../../assets/css/home.css';
+import '../../assets/css/modal.css';
 import SideNav from '../layout/SideNav';
+import Requests from '../pages/Requests';
 import AuthContext from '../../context/auth/authContext';
 import Avatar from '../../assets/logos/avatar1.png'
 import axios from 'axios';
@@ -67,7 +69,22 @@ const YourGroup = () => {
                   </li>
                   <li align="left">
                     <button className="btn-sbmt" style={{'margin-top': '30px', 'backgroundColor': '#fc2956', 'color': 'white', 'width': '200px', 'position': 'relative', 'left': '-50px'}}>
-                        See Requests >
+                        
+
+                        <input type="checkbox" id="modal"></input>
+                            <label for="modal" className="example-label">See Requests {">"}</label>
+                            <label for="modal" className="modal-background"></label>
+                            <div class="modal">
+                              <div class="modal-header">
+                                <h3>Join Requests</h3>
+                                    <label for="modal">
+                                      <img className="img-cross" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAdVBMVEUAAABNTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU0N3NIOAAAAJnRSTlMAAQIDBAUGBwgRFRYZGiEjQ3l7hYaqtLm8vsDFx87a4uvv8fP1+bbY9ZEAAAB8SURBVBhXXY5LFoJAAMOCIP4VBRXEv5j7H9HFDOizu2TRFljedgCQHeocWHVaAWStXnKyl2oVWI+kd1XLvFV1D7Ng3qrWKYMZ+MdEhk3gbhw59KvlH0eTnf2mgiRwvQ7NW6aqNmncukKhnvo/zzlQ2PR/HgsAJkncH6XwAcr0FUY5BVeFAAAAAElFTkSuQmCC" width="16" height="16" alt="" />
+                                    </label>
+                                </div>
+                                <p style={{'color':'black'}}>
+                                  <Requests />
+                                </p>
+                            </div>
                     </button>
                   </li>
                 </ul>
