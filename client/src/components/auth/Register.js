@@ -9,11 +9,17 @@ const Register = (props) => {
 
   const { register, error, clearErrors, isAuthenticated } = authContext;
 
+  let URL;
+  if (process.env.NODE_ENV === 'production') {
+    URL = 'https://adya-support.herokuapp.com';
+  } else {
+    URL = 'http://localhost:3000';
+  }
   useEffect(() => {
     if (isAuthenticated) {
       // props.history.push('/');
       const link = document.createElement('a');
-      link.href = 'http://localhost:3000/home';
+      link.href = `${URL}/home`;
       link.click();
     }
 
@@ -79,13 +85,11 @@ const Register = (props) => {
   };
 
   return (
-    <div className="wrapper-out wrapper-out-2">
-    <div className='wrapper wrapper1'>
-      <h1>
-        SIGN UP.
-      </h1>
-      <form onSubmit={onSubmit}>
-          <div className="row">
+    <div className='wrapper-out wrapper-out-2'>
+      <div className='wrapper wrapper1'>
+        <h1>SIGN UP.</h1>
+        <form onSubmit={onSubmit}>
+          <div className='row'>
             <div className='form-group col-md-4'>
               <label htmlFor='name'>Name</label>
               <input
@@ -94,7 +98,7 @@ const Register = (props) => {
                 value={name}
                 onChange={onChange}
                 required
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className='form-group col-md-4'>
@@ -107,7 +111,7 @@ const Register = (props) => {
                 required
                 minLength='10'
                 maxLength='10'
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className='form-group col-md-4'>
@@ -118,12 +122,12 @@ const Register = (props) => {
                 value={skill}
                 onChange={onChange}
                 required
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
           </div>
 
-          <div className="row">
+          <div className='row'>
             <div className='form-group col-md-4'>
               <label htmlFor='state'>State</label>
               <input
@@ -132,7 +136,7 @@ const Register = (props) => {
                 value={state}
                 onChange={onChange}
                 required
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className='form-group col-md-4'>
@@ -143,7 +147,7 @@ const Register = (props) => {
                 value={district}
                 onChange={onChange}
                 required
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className='form-group col-md-4'>
@@ -154,12 +158,12 @@ const Register = (props) => {
                 value={group}
                 onChange={onChange}
                 required
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
           </div>
 
-          <div className="row">
+          <div className='row'>
             <div className='form-group col-md-6'>
               <label htmlFor='password'>Password</label>
               <input
@@ -169,7 +173,7 @@ const Register = (props) => {
                 onChange={onChange}
                 required
                 minLength='4'
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className='form-group col-md-6'>
@@ -181,16 +185,16 @@ const Register = (props) => {
                 onChange={onChange}
                 required
                 minLength='4'
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
           </div>
-        <input type='submit' value='Register' className='btn-sbmt'/>
-        {/* <Link to='/home' className='btn btn-primary btn-block'>
+          <input type='submit' value='Register' className='btn-sbmt' />
+          {/* <Link to='/home' className='btn btn-primary btn-block'>
           Register
         </Link> */}
 
-        <ul class="bg-bubbles">
+          <ul class='bg-bubbles'>
             <li></li>
             <li></li>
             <li></li>
@@ -202,8 +206,8 @@ const Register = (props) => {
             <li></li>
             <li></li>
           </ul>
-      </form>
-    </div>
+        </form>
+      </div>
     </div>
   );
 };

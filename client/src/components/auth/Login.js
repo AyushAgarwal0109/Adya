@@ -9,11 +9,18 @@ const Login = (props) => {
 
   const { login, error, clearErrors, isAuthenticated } = authContext;
 
+  let URL;
+  if (process.env.NODE_ENV === 'production') {
+    URL = 'https://adya-support.herokuapp.com';
+  } else {
+    URL = 'http://localhost:3000';
+  }
+
   useEffect(() => {
     if (isAuthenticated) {
       // props.history.push('/');
       const link = document.createElement('a');
-      link.href = 'http://localhost:3000/home';
+      link.href = `${URL}/home`;
       link.click();
     }
 

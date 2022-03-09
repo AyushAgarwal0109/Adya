@@ -3,6 +3,12 @@ import LogoMain from '../../assets/logos/logo-main.png';
 import { Link } from 'react-router-dom';
 
 const NavbarMain = () => {
+  let URL;
+  if (process.env.NODE_ENV === 'production') {
+    URL = 'https://adya-support.herokuapp.com';
+  } else {
+    URL = 'http://localhost:3000';
+  }
   return (
     <>
       <nav className='nav'>
@@ -22,12 +28,12 @@ const NavbarMain = () => {
         </div>
         <input type='checkbox' id='nav-check'></input>
         <div className='nav-links'>
-          <a href='http://localhost:3000/#home' className='jhk'>
+          <a href={`${URL}/#home`} className='jhk'>
             HOME
           </a>
-          <a href='http://localhost:3000/#about'>ABOUT</a>
+          <a href={`${URL}/#about`}>ABOUT</a>
           <Link to='/schemes'>SCHEMES</Link>
-          <a href='http://localhost:3000/#contact'>CONTACT</a>
+          <a href={`${URL}/#contact`}>CONTACT</a>
           <Link to='/login' className='loginbtn'>
             LOGIN
           </Link>
