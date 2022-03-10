@@ -15,14 +15,14 @@ const SideNav = () => {
   };
   return (
     <div class='sidebar'>
-      <div class='dashboard' align="center">
+      <div class='dashboard' align='center'>
         <div class='dash-items'>
-          <Link to='/home'> 
-            <img class="logo-dashboard" src={LogoMain}></img>
+          <Link to='/home'>
+            <img class='logo-dashboard' src={LogoMain}></img>
           </Link>
         </div>
         <div>
-          <img className="floral" src={Floral}></img>
+          <img className='floral' src={Floral}></img>
         </div>
         <div class='dash-item'>
           <Link to='/home'>HOME</Link>
@@ -37,10 +37,12 @@ const SideNav = () => {
           <Link to='/shgroups'>SELF HELP GROUPS</Link>
         </div>
         <div class='dash-item'>
-          <Link to='/settings'>SETTINGS</Link>
+          <Link to='/settings'>PROFILE</Link>
         </div>
         <div class='dash-item'>
-          <Link onClick={onLogout} to='/'>LOGOUT</Link>
+          <Link onClick={onLogout} to='/'>
+            LOGOUT
+          </Link>
         </div>
       </div>
     </div>
