@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 // import { Link } from 'react-router-dom';
 import '../../assets/css/form.css';
 
+// Testing
 const Login = (props) => {
   const authContext = useContext(AuthContext);
 
@@ -72,6 +73,7 @@ const Login = (props) => {
               value={phone}
               onChange={onChange}
               autoComplete='off'
+              minLength="10" maxLength="10"
               required
             />
           </div>
