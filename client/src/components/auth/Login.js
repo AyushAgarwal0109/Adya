@@ -65,6 +65,7 @@ const Login = (props) => {
               value={phone}
               onChange={onChange}
               autoComplete='off'
+              minLength="10" maxLength="10"
               required
             />
           </div>
