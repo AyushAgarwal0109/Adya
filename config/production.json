@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://emp:emp%40123@cluster0.ocpj5.mongodb.net/employee?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://dbUser:dbUser@cluster0.ssqzn.mongodb.net/Adya?retryWrites=true&w=majority",
   "jwtSecret": "secret"
 }
