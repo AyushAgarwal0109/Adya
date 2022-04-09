@@ -15,9 +15,9 @@ const ContactUs = () => {
                         REACH US!
                     </div>
                     <div className="contact-details">
-                        <label>Email ID</label><span className="contact-span"> : adya@xyz.in</span> <br />
-                        <label>Customer Care</label><span className="contact-span"> : 1800-900-300</span> <br />
-                        <label>Address</label><span className="contact-span"> : Connaught Place, New Delhi</span> <br />
+                        <label>Email ID</label><span className="contact-span"> : adya.venture@gmail.com</span> <br />
+                        <label>Customer Care</label><span className="contact-span"> : +91 - 9540273272</span> <br />
+                        <label>Address</label><span className="contact-span"> : Dwarka, New Delhi</span> <br />
                     </div>
                 </div>
             </div>
