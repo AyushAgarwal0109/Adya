@@ -17,16 +17,17 @@ const Banner = () => {
           <img className='banner-photo' src={BannerPhoto}></img>
         </div>
         <div className='banner-right'>
-          <div className='main-heading'>Adya</div>
+          <div className='main-heading'>ADYA</div>
           <div className='sub-heading'>
-            WHERE PREPARATION MEETS OPPORTUNITY.
+            Where Preparation meets Opportunity.
           </div>
+          
           <div className=''>
             <a href={`${URL}/#about`}>
-              <button className='button-banner'>Read More!</button>
+              <button className='button-banner'>Read More &nbsp;<i class="fa-brands fa-readme"></i></button>
             </a>
             <a href={`${URL}/#contact`}>
-              <button className='button-banner'>Contact Us!</button>
+              <button className='button-banner'>Contact Us &nbsp;<i class="fa-solid fa-message"></i></button>
             </a>
           </div>
         </div>
