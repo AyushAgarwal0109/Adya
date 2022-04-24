@@ -1,14 +1,29 @@
-import ContactPhoto from '../../assets/images/contact-photo.png'
-import '../../assets/css/contact.css'
+import ContactPhoto from '../../assets/images/contact-photo.png';
+import '../../assets/css/contact.css';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import { Component } from 'react';
 
-const ContactUs = () => {
-    return ( 
+export class ContactUs extends Component {
+    render(){
+        return(
         <>
         <div className="hello-cons" id="contact"></div>
         <div className="contact">
-            <div className="contact-inner">
+            <div className="contact-inner row">
                 <div className="contact-left">
-                    <img className="contact-photo" src={ContactPhoto}></img>
+
+                <Map google={this.props.google} zoom={14}>
+ 
+                <Marker onClick={this.onMarkerClick}
+                        name={'Current location'} />
+
+                <InfoWindow onClose={this.onInfoWindowClose}>
+                    <div>
+                    <h1>{this.state.selectedPlace.name}</h1>
+                    </div>
+                </InfoWindow>
+                </Map>
+
                 </div>
                 <div className="contact-right">
                     <div className="main-headingss">
@@ -23,7 +38,9 @@ const ContactUs = () => {
             </div>
         </div>
         </>
-     );
+        );
+    }
 }
- 
-export default ContactUs;
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyD_kRF8f0_e6IsONJf2uW8oUhJdvptAEno")
+  })(ContactUs)
