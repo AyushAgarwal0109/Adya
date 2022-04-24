@@ -1,9 +1,9 @@
 
   
   .wrapper {
-    background: #fc2956;  
-    background: linear-gradient(to right, #ffc0cb, #fc2956);
-    
+    background: #9a69c2;  
+    background: linear-gradient(to right, #c3afd4, #6a2a9e);
+
     position: absolute;
     color: white !important;
   }

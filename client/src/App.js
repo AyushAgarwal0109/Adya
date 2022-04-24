@@ -8,7 +8,7 @@ import NavbarMain from './components/layout/NavbarMain';
 import AboutMain from './components/layout/About';
 import Contact from './components/layout/ContactUs';
 import Banner from '../../client/src/components/layout/Banner';
-import Schemes from '../../client/src/components/layout/Schemes';
+// import Schemes from '../../client/src/components/layout/Schemes';
 import Finance from '../../client/src/components/pages/FinanceHelp';
 import News from './components/layout/Newsletter';
 
@@ -53,17 +53,17 @@ const App = () => {
                   <NavbarMain />
                   <Banner />
                   <AboutMain />
-                  <Contact />
                   <News />
+                  <Contact />
                 </Route>
                 <Route exact path='/register'>
                   <NavbarMain />
                   <Register />
                 </Route>
-                <Route exact path='/schemes'>
+                {/* <Route exact path='/schemes'>
                   <NavbarMain />
                   <Schemes />
-                </Route>
+                </Route> */}
                 <Route exact path='/login'>
                   <NavbarMain />
                   <Login />

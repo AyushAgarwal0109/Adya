@@ -32,7 +32,6 @@ const NavbarMain = () => {
             HOME
           </a>
           <a href={`${URL}/#about`}>ABOUT</a>
-          <Link to='/schemes'>SCHEMES</Link>
           <a href={`${URL}/#contact`}>CONTACT</a>
           <Link to='/login' className='loginbtn'>
             LOGIN
