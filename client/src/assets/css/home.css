@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .home-outer{
-
+background: url(../images/pinky2.png);
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;

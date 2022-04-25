@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
 .contact-inner{
-    
+    background:  #b77deb;
     background-repeat: no-repeat;
     background-size: cover;
     height: 70vh;
@@ -14,7 +15,7 @@
 }
 
 .main-headingss{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 5rem;
     position: absolute;
     top: 25%;
