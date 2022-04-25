@@ -8,8 +8,9 @@ import NavbarMain from './components/layout/NavbarMain';
 import AboutMain from './components/layout/About';
 import Contact from './components/layout/ContactUs';
 import Schemes from './components/layout/Schemes';
+import Donate from './components/layout/Donate';
 import Banner from '../../client/src/components/layout/Banner';
-// import Schemes from '../../client/src/components/layout/Schemes';
+
 import Finance from '../../client/src/components/pages/FinanceHelp';
 import News from './components/layout/Newsletter';
 
@@ -55,6 +56,7 @@ const App = () => {
                   <Banner />
                   <AboutMain />
                   <Schemes />
+                  <Donate />
                   {/* <News />
                   <Contact /> */}
                 </Route>

@@ -3,11 +3,16 @@ import '../../assets/css/schemes.css';
 const Schemes = () => {
     return ( 
         <div className='schemes-outer'>
-            <div className='schemes-inner'>
-            <div className='schemes-heading'>
-                <h1> SCHEMES. </h1>
+            <div className='schemes-inner row'>
+            <div className='schemes-inner1 col-sm-1'>
+                <div className='schemes-heading2'>
+                    <h1> योजनाएं / </h1>
+                </div>
+                <div className='schemes-heading'>
+                    <h1> SCHEMES. </h1>
+                </div>
             </div>
-            <main className="page-content">
+            <div className="page-content col-sm-11">
             
                 <div className="cardcard">
                     <div className="content">
@@ -37,9 +42,6 @@ const Schemes = () => {
                     <button className="btnschemes">Know More!</button>
                     </div>
                 </div>
-            </main>
-            <div className='schemes-heading2'>
-                <h1> योजनाएं / </h1>
             </div>
             </div>
         </div>

@@ -63,7 +63,7 @@ const Login = (props) => {
   return (
     <div className='wrapper-out'>
       <div className='wrapper wrapper2'>
-        <h1>LOGIN.</h1>
+        <h1>.</h1>
         <form onSubmit={onSubmit}>
           <div className='form-group'>
             <label htmlFor='phone'>Phone Number</label>
