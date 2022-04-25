@@ -1,17 +1,21 @@
-import ContactPhoto from '../../assets/images/contact-photo.png';
-import '../../assets/css/contact.css';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-import { Component } from 'react';
+import ContactPhoto from '../../assets/images/contact-photo.png'
+import '../../assets/css/contact.css'
+import Map from './Map'
+const location = {
+    address: '1600 Amphitheatre Parkway, Mountain View, california.',
+    lat: 37.42216,
+    lng: -122.08427,
+}
 
 const ContactUs = () => {
-
-        return(
+    return ( 
         <>
         <div className="hello-cons" id="contact"></div>
         <div className="contact">
-            <div className="contact-inner row">
+            <div className="contact-inner">
                 <div className="contact-left">
-
+                <Map location={location} zoomLevel={17} /> 
+             
                 </div>
                 <div className="contact-right">
                     <div className="main-headingss">
@@ -27,6 +31,5 @@ const ContactUs = () => {
         </div>
         </>
         );
-    }
-
-export default ContactUs;
+}
+export default ContactUs
