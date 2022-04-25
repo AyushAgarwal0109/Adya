@@ -1,11 +1,34 @@
 .schemes-outer{
-  background: linear-gradient(160deg, #D8C6E8 50%, #9d73c2 90%);
+  background: linear-gradient(160deg, #9d73c2 50%, #D8C6E8 90%);
   background-attachment: fixed;
   padding: 50px;
+  position: relative;
 }
 
 .schemes-heading{
   color: white;
+  position: absolute;
+  top: 42%;
+  left: 6%;
+  transform: translate(-50%, -50%);
+  transform: rotate(270deg);
+}
+
+.schemes-heading2{
+  color: white;
+  position: absolute;
+  top: 43%;
+  left: 3%;
+  transform: translate(-50%, -50%);
+  transform: rotate(270deg);
+}
+
+.schemes-heading h1{
+  font-size: 4em;
+}
+
+.schemes-heading2 h1{
+  font-size: 4em;
 }
 
 .page-content {
@@ -29,6 +52,7 @@
 .cardcard {
   position: relative;
   display: flex;
+  margin: 0 100px;
   align-items: flex-end;
   overflow: hidden;
   padding: 0.5rem;

@@ -55,8 +55,8 @@ const App = () => {
                   <Banner />
                   <AboutMain />
                   <Schemes />
-                  <News />
-                  <Contact />
+                  {/* <News />
+                  <Contact /> */}
                 </Route>
                 <Route exact path='/register'>
                   <NavbarMain />
