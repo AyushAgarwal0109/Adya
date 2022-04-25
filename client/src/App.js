@@ -7,6 +7,7 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import NavbarMain from './components/layout/NavbarMain';
 import AboutMain from './components/layout/About';
 import Contact from './components/layout/ContactUs';
+import Schemes from './components/layout/Schemes';
 import Banner from '../../client/src/components/layout/Banner';
 // import Schemes from '../../client/src/components/layout/Schemes';
 import Finance from '../../client/src/components/pages/FinanceHelp';
@@ -53,6 +54,7 @@ const App = () => {
                   <NavbarMain />
                   <Banner />
                   <AboutMain />
+                  <Schemes />
                   <News />
                   <Contact />
                 </Route>
@@ -60,10 +62,6 @@ const App = () => {
                   <NavbarMain />
                   <Register />
                 </Route>
-                {/* <Route exact path='/schemes'>
-                  <NavbarMain />
-                  <Schemes />
-                </Route> */}
                 <Route exact path='/login'>
                   <NavbarMain />
                   <Login />

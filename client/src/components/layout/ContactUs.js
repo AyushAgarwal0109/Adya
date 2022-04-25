@@ -3,26 +3,14 @@ import '../../assets/css/contact.css';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import { Component } from 'react';
 
-export class ContactUs extends Component {
-    render(){
+const ContactUs = () => {
+
         return(
         <>
         <div className="hello-cons" id="contact"></div>
         <div className="contact">
             <div className="contact-inner row">
                 <div className="contact-left">
-
-                <Map google={this.props.google} zoom={14}>
- 
-                <Marker onClick={this.onMarkerClick}
-                        name={'Current location'} />
-
-                <InfoWindow onClose={this.onInfoWindowClose}>
-                    <div>
-                    <h1>{this.state.selectedPlace.name}</h1>
-                    </div>
-                </InfoWindow>
-                </Map>
 
                 </div>
                 <div className="contact-right">
@@ -40,7 +28,5 @@ export class ContactUs extends Component {
         </>
         );
     }
-}
-export default GoogleApiWrapper({
-    apiKey: ("AIzaSyD_kRF8f0_e6IsONJf2uW8oUhJdvptAEno")
-  })(ContactUs)
+
+export default ContactUs;
