@@ -10,7 +10,7 @@ import Contact from './components/layout/ContactUs';
 import Schemes from './components/layout/Schemes';
 import Donate from './components/layout/Donate';
 import Banner from '../../client/src/components/layout/Banner';
-
+import Testimonials from './components/layout/Testimonials';
 import Finance from '../../client/src/components/pages/FinanceHelp';
 import News from './components/layout/Newsletter';
 
@@ -59,6 +59,7 @@ const App = () => {
                   <Donate />
                   {/* <News />
                   <Contact /> */}
+                  <Testimonials />
                 </Route>
                 <Route exact path='/register'>
                   <NavbarMain />
