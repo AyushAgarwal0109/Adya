@@ -57,8 +57,8 @@ const App = () => {
                   <AboutMain />
                   <Schemes />
                   <Donate />
-                  {/* <News />
-                  <Contact /> */}
+                  { /* <News /> */}
+                  <Contact /> 
                   <Testimonials />
                 </Route>
                 <Route exact path='/register'>
