@@ -31,7 +31,7 @@ body {
 }
 
 .dash-items {
-  border: 2px solid #fc2956;
+  border: 2px solid #9a69c2;
   border-radius: 50%;
   width: 80%;
   margin: 50px 0px 8px 0px;
@@ -42,13 +42,8 @@ body {
 }
 
 .dash-item:hover{
-  background-color: #fc2956 !important;
+  background-color: #9a69c2 !important;
   background: none;
-}
-
-.logo-dashboard{
-  width: 60%;
-  height: 200px;
 }
 
 .dash-item:hover a{
