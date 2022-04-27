@@ -1,6 +1,7 @@
 .donate-outer{
     padding: 80px 50px;
     position: relative;
+
 }
 
 .donate-img{
@@ -10,6 +11,10 @@
 
 .donate-right{
     margin: auto 0;
+}
+
+.donate-inner form{
+    z-index: 1;
 }
 
 .donate-inner form input{
