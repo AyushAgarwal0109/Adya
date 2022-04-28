@@ -1,5 +1,5 @@
 import '../../assets/css/contact.css'
-import LogoMain from '../../assets/logos/logo-main.png';
+import LogoMain from '../../assets/logos/logo-main-copy.png';
 import Map from './Map'
 const location = {
     address: 'Dwarka, Delhi.',

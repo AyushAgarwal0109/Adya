@@ -51,7 +51,7 @@
 
 .contact-right-links a{
     border-radius: 30px;
-    padding: 10px 30px;
+    padding: 10px 20px 10px 10px;
     background-color: white;
     color: #9d73c2;
     letter-spacing: 1px;
@@ -69,6 +69,7 @@
 
 .contact-right-links i{
     color: #9d73c2;
+    margin-right: 5px;
 }
 
 

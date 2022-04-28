@@ -57,7 +57,7 @@ const App = () => {
                   <AboutMain />
                   <Schemes />
                   <Donate />
-                  { /* <News /> */}
+                  <News />
                   <Testimonials />
                   <Contact /> 
 

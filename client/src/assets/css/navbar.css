@@ -184,6 +184,12 @@
       top: 7%;
     }
   
+    .brand-name-logo {
+      position: relative;
+      left: 10px;
+      top: 5px;
+    }
+
     .nav-title {
       position: relative;
       top: -3px;
@@ -203,13 +209,16 @@
       right: 10px;
     }
     .nav > .nav-btn > label{
-      background-color: #ded1ea;
+      background-color: ;
     }
     .nav > .nav-btn > label > span {
       display: block;
       width: 25px;
-      height: 10px;
-      border-top: 2px solid #9a69c2;
+      height: 2px;
+      background-color: #9a69c2;
+      border: 2px solid #9a69c2;
+      border-radius: 5px;
+      margin: 5px 0;
     }
     .nav > .nav-links {
       position: absolute;
@@ -242,7 +251,7 @@
         background-color: #9a69c2;
         width: 30% !important;
         border-radius: 30px !important;
-        margin-left: 35% !important;
+        margin-left: 35.5% !important;
     }
   
     .nav > #nav-check:not(:checked) + .nav-links {

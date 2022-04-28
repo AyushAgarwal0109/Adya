@@ -37,7 +37,7 @@ const Schemes = () => {
                 <div className="cardcard">
                     <div className="content">
                     <h2 className="title">UDYOGINI SCHEME</h2>
-                    <p className="copy">This program encourages women to be self-reliant and help them in self-development by empowering them economically to be able to do so.</p>
+                    <p className="copy">This program encourages women to be self reliant and help them in self development by empowering them economically.</p>
                     <a href="https://www.lendingkart.com/blog/udyogini-scheme/" target="_blank" rel="noopener noreferrer"><button className="btnschemes">Know More!</button></a>
                     </div>
                 </div>
