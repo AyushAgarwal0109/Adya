@@ -1,9 +1,11 @@
 import React from 'react'
 import image from "../../assets/images/testi.png";
 import "../../assets/css/testimonials.css";
-import image1 from "../../assets/images/schemesImage2.jpg";
+import image1 from "../../assets/images/RumaDevi.jpeg";
+import image2 from "../../assets/images/RumaDevi2.jpg";
+import image3 from "../../assets/images/RumaDevi3.png";
 import "../../assets/css/testimonials.css";
-import testimonial from '../../assets/images/testimoniall.png';
+import testimonial from '../../assets/images/testimoniall2.png';
 
 function Testimonials() {
   return (
@@ -20,6 +22,7 @@ function Testimonials() {
                       <center>
                           <div className='women-cont'>
                               <img src={image1} alt="img" className="women" />
+                              <p className="paraaa"><b>RUMA DEVI</b></p>
                               <div>
                                   <img src={testimonial} alt="img" className="women-below" />
                               </div>
@@ -36,7 +39,8 @@ function Testimonials() {
                   <div>
                       <center>
                           <div className='women-cont'>
-                              <img src={image1} alt="img" className="women" />
+                              <img src={image2} alt="img" className="women" />
+                              <p className="paraaa"><b>SITA SHARMA</b></p>
                               <div>
                                   <img src={testimonial} alt="img" className="women-below" />
                               </div>
@@ -53,7 +57,8 @@ function Testimonials() {
                   <div>
                       <center>
                           <div className='women-cont'>
-                              <img src={image1} alt="img" className="women" />
+                              <img src={image3} alt="img" className="women" />
+                              <p className="paraaa"><b>GEETA GUPTA</b></p>
                               <div>
                                   <img src={testimonial} alt="img" className="women-below" />
                               </div>

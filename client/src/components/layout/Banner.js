@@ -19,7 +19,7 @@ const Banner = () => {
           Adya, an initiative to promote and support aspiring as well as established rural women entrepreneurs. Adya enables partnerships between Rural women and existing ventures.
           </div>
           
-          <div className=''>
+          <div className='button-banner-cont'>
             <a href={`${URL}/#about`}>
               <button className='button-banner'>Read More &nbsp;<i class="fa-solid fa-circle-chevron-down"></i></button>
             </a>

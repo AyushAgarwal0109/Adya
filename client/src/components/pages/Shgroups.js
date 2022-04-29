@@ -7,6 +7,7 @@ import AuthContext from '../../context/auth/authContext';
 import '../../assets/css/home.css';
 import GroupInfo from './GroupInfo';
 import Spinner from '../layout/Spinner';
+import NavbarInside from '../layout/NavbarInside';
 
 const Shgroups = () => {
   const authContext = useContext(AuthContext);
@@ -80,9 +81,9 @@ const Shgroups = () => {
   else {
     if (!submitted)
       return (
-        <div className='grid-2 home-outer'>
+        <div className='home-outer'>
           <div>
-            <SideNav />
+            <NavbarInside />
           </div>
           <div className='wrapper'>
             <form onSubmit={onSubmit}>

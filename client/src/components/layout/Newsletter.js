@@ -3,7 +3,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import '../../assets/css/news.css';
 import '../../assets/css/news-cards.css';
-import NewsPhoto from '../../assets/images/news-photo.png';
+import NewsPhoto from '../../assets/images/img-news.png';
 
 const Newletter = () => {
   const [email, setEmail] = useState('');
@@ -47,12 +47,33 @@ const Newletter = () => {
       <div className='hello-about' id='about'></div>
       <div className='news-main'>
         <div className='news-inner'>
+                <div className='news-heading2'>
+                    <h1> समाचार / </h1>
+                </div>
+                <div className='news-heading'>
+                    <h1> NEWS. </h1>
+                </div>
           <div className='news-inner-inner'>
             <figure class="icon-cards mt-3">
               <div class="icon-cards__content">
-                <div class="icon-cards__item d-flex align-items-center justify-content-center"><span class="h1"></span></div>
-                <div class="icon-cards__item d-flex align-items-center justify-content-center"><span class="h1"></span></div>
-                <div class="icon-cards__item d-flex align-items-center justify-content-center"><span class="h1"></span></div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
               </div>
             </figure>
           </div>

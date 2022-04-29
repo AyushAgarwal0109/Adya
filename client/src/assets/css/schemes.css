@@ -94,17 +94,17 @@
   transition: transform calc(var(--d) * 2) var(--e);
 }
 .cardcard:nth-child(1):before {
-  background-image: url('../images/schemesimg1.jpg');
+  background-image: url('../images/women1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 .cardcard:nth-child(2):before {
-  background-image: url('../images/schemesimg1.jpg');
+  background-image: url('../images/images.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 .cardcard:nth-child(3):before {
-  background-image: url('../images/schemesimg1.jpg');
+  background-image: url('../images/women3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }

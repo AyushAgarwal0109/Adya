@@ -6,13 +6,42 @@
     position: relative;
     background-attachment: fixed;
     overflow: hidden;
-    padding: 30px;
+    min-height: 70vh;
+    padding: 30px 50px;
+    position: relative;
 }
 
 .news-inner-inner{
-    position: relative;
-    left: 37%;
+    position: absolute;
+    top: 48%;
+    left: 57%;
+    transform: translate(-50%, -50%);
 }
 
+.news-heading{
+    color: white;
+    position: absolute;
+    top: 38%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+    transform: rotate(270deg);
+  }
+  
+  .news-heading2{
+    color: white;
+    position: absolute;
+    top: 42%;
+    left: 3%;
+    transform: translate(-50%, -50%);
+    transform: rotate(270deg);
+  }
+  
+  .news-heading h1{
+    font-size: 6em;
+  }
+  
+  .news-heading2 h1{
+    font-size: 4em;
+  }
              
 

@@ -5,6 +5,7 @@ import AuthContext from '../../context/auth/authContext';
 import SideNav from '../layout/SideNav';
 import '../../assets/css/home.css';
 import Updatelogo from '../../assets/logos/update-logo.png';
+import NavbarInside from '../layout/NavbarInside';
 
 const Settings = () => {
   const authContext = useContext(AuthContext);
@@ -16,9 +17,9 @@ const Settings = () => {
   }, []);
 
   return (
-    <div className='grid-2 home-outer'>
+    <div className='home-outer'>
       <div>
-        <SideNav />
+        <NavbarInside />
       </div>
       <div className='wrapper wrapper22'>
         <h1 className='heading-settings'>Settings</h1>

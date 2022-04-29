@@ -33,23 +33,22 @@ const App = () => {
       <AuthState>
         <Router>
           <Fragment className='App'>
-            {/* <Navbar /> */}
             <div>
               <Switch>
                 <PrivateRoute exact path='/home'>
-                  <Home />
+                <Home />
                 </PrivateRoute>
                 <PrivateRoute exact path='/categories'>
-                  <Categories />
+                <Categories />
                 </PrivateRoute>
                 <PrivateRoute exact path='/shgroups'>
-                  <Shgroups />
+                <Shgroups />
                 </PrivateRoute>
                 <PrivateRoute exact path='/financehelp'>
-                  <Finance />
+                <Finance />
                 </PrivateRoute>
                 <PrivateRoute exact path='/settings'>
-                  <Settings />
+                <Settings />
                 </PrivateRoute>
                 <Route exact path='/'>
                   <NavbarMain />
@@ -60,15 +59,6 @@ const App = () => {
                   <News />
                   <Testimonials />
                   <Contact /> 
-
-                </Route>
-                <Route exact path='/register'>
-                  <NavbarMain />
-                  <Register />
-                </Route>
-                <Route exact path='/login'>
-                  <NavbarMain />
-                  <Login />
                 </Route>
               </Switch>
             </div>

@@ -5,6 +5,7 @@ import LoanForm from './LoanForm';
 import '../../assets/css/home.css';
 import Girlava from '../../assets/logos/girlava.png';
 import Carousel from '../pages/Carousel';
+import NavbarInside from '../layout/NavbarInside';
 
 const Home = () => {
   const authContext = useContext(AuthContext);
@@ -17,14 +18,10 @@ const Home = () => {
 
   return (
     <>
-      <div className='grid-2 home-outer'>
-        <div>
-          <SideNav />
-        </div>
+      <div className='grid-12 home-outer'>
+        <NavbarInside />
         <div className='mainin'>
           <div className='mainin-1'>
-            <br />
-            <br />
             <h1>Welcome </h1>
           </div>
           <div className='mainin-2'>
@@ -38,7 +35,9 @@ const Home = () => {
             <h1>
               <i>Some of our Happy Customers!</i>
             </h1>
-            <Carousel />
+            <center>
+              <Carousel />
+            </center>
           </div>
         </div>
       </div>
