@@ -18,17 +18,54 @@ const Home = () => {
 
   return (
     <>
-      <div className='grid-12 home-outer'>
+      <div className='home-outer'>
         <NavbarInside />
-        <div className='mainin'>
-          <div className='mainin-1'>
-            <h1>Welcome </h1>
+        <div className='mainin container-fluid'>
+          <div className='row'>
+            <div className='mainin-in col-sm-4'>
+              <center>
+              <div className='home-box'>
+
+              </div>
+              </center>
+            </div>
+            <div className='mainin-in col-sm-4'>
+            <center>
+              <div className='home-box'>
+
+              </div>
+              </center>
+            </div>
+            <div className='mainin-in col-sm-4'>
+              <center>
+              <div className='home-box'>
+
+              </div>
+              </center>
+            </div>
           </div>
-          <div className='mainin-2'>
-            <img className='avatar-girl' src={Girlava}></img>
-          </div>
-          <div className='mainin-3'>
-            <h1> ~ {user && user.name} ~ </h1>
+          <div className='row'>
+            <div className='mainin-in col-sm-4'>
+              <center>
+              <div className='home-box'>
+            
+              </div>
+              </center>
+            </div>
+            <div className='mainin-in col-sm-4'>
+            <center>
+              <div className='home-box'>
+
+              </div>
+              </center>
+            </div>
+            <div className='mainin-in col-sm-4'>
+              <center>
+              <div className='home-box'>
+
+              </div>
+              </center>
+            </div>
           </div>
           <br />
           <div className='main-carousel'>

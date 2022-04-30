@@ -1,11 +1,12 @@
 import '../../assets/css/navbar.css';
 import AuthContext from '../../context/auth/authContext';
-import LogoMain from '../../assets/logos/logo-main.png';
-import React, { useContext } from 'react';
+import LogoMain from '../../assets/logos/logo-main-copy.png';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../assets/css/modal.css';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
+import Girlava from '../../assets/logos/girlava.png';
 
 const NavbarInside = () => {
     const authContext = useContext(AuthContext);
@@ -15,14 +16,30 @@ const NavbarInside = () => {
     const onLogout = () => {
       logout();
     };
+
+    const { user } = authContext;
+  
+    useEffect(() => {
+      authContext.loadUser();
+      // eslint-disable-next-line
+    }, []);
+
   return (
     <>
-      <nav className='nav'>
+      <nav className='nav nav-inside'>
         <div className='nav-header'>
           <div className='nav-title'>
-            <span className=''>
-              <img src={LogoMain} className='brand-name-logo'></img>
-            </span>
+            <div className='row'>
+              <div className='col-sm-2'>
+                <img src={Girlava} className='navbar-inside-logo'></img>
+              </div>
+              <div className='col-sm-10'>
+                <span>
+                  Welcome!
+                  <p>{user && user.name}</p>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
         <div className='nav-btn'>
@@ -42,6 +59,8 @@ const NavbarInside = () => {
             <Link onClick={onLogout} to='/' className='loginbtn'>LOGOUT</Link>
         </div>
       </nav>
+
+      
     </>
   );
 };

@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .home-outer{
-background: rgb(234, 225, 225);
+background: url('../images/dash-bg.png');
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
@@ -215,19 +215,14 @@ min-height: 100vh;
     padding: 150px 0 30px 0;
   }
 
-  .mainin-1 h1{
-    font-family: mark;
-    font-size: 5rem;
-    color: #9a69c2;
+  .mainin-in .home-box{
+    background-color: white;
+    height: 100px;
+    width: 80%;
+    margin: 20px 50px;
+    border-radius: 10px;
   }
 
-
-
-  .mainin-3 h1{
-      font-family: evo;
-      font-size: 3rem;
-      color: #9a69c2;
-  }
 
   .headingss{
     font-family: evo;
