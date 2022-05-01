@@ -131,7 +131,7 @@
     height: 60px;
     z-index: 99999;
     position: relative;
-    left: 10px;
+    left: -60px;
   }
 
     .nav-inside{
@@ -224,7 +224,7 @@
       text-align: center;
       width: 20% !important;
       border-radius: 30px !important;
-      margin-left: 40% !important;
+      margin-left: 39% !important;
     }
 
     .nav-inside > .nav-links > a:hover {

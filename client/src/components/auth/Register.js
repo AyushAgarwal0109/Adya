@@ -133,7 +133,19 @@ const Register = (props) => {
   </div>
 
   <div className='row'>
-    <div className='form-group col-md-4'>
+
+  <div className='form-group col-md-6'>
+      <label htmlFor='group'>Address</label>
+      <input
+        type='text'
+        name='address'
+        onChange={onChange}
+        required
+        autoComplete='off'
+      />
+    </div>
+
+    <div className='form-group col-md-3'>
       <label htmlFor='state'>State</label>
       <input
         type='text'
@@ -144,7 +156,7 @@ const Register = (props) => {
         autoComplete='off'
       />
     </div>
-    <div className='form-group col-md-4'>
+    <div className='form-group col-md-3'>
       <label htmlFor='district'>District</label>
       <input
         type='text'
@@ -155,7 +167,10 @@ const Register = (props) => {
         autoComplete='off'
       />
     </div>
-    <div className='form-group col-md-4'>
+  </div>
+
+  <div className='row'>
+  <div className='form-group col-md-6'>
       <label htmlFor='group'>Individual/Associated with SHG</label>
       <input
         type='text'
@@ -165,12 +180,6 @@ const Register = (props) => {
         required
         autoComplete='off'
       />
-    </div>
-  </div>
-
-  <div className='row'>
-    <div className='col-sm-3'>
-
     </div>
     <div className='form-group col-md-3'>
         
@@ -198,9 +207,6 @@ const Register = (props) => {
             autoComplete='off'
             className='pinner'
         />
-    </div>
-    <div className='col-sm-3'>
-
     </div>
   </div>
   <button type='submit' value='Register' className='btn-sbmt'>Register  <img src={Loader} className='loginbtn-loader'></img></button>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import '../../assets/css/news.css';
 import '../../assets/css/news-cards.css';
-import NewsPhoto from '../../assets/images/img-news.png';
+import NewsPhoto from '../../assets/images/NEWS-1.png';
 
 const Newletter = () => {
   const [email, setEmail] = useState('');

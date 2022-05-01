@@ -35,7 +35,7 @@ const NavbarInside = () => {
               </div>
               <div className='col-sm-10'>
                 <span>
-                  Welcome!
+                  WELCOME
                   <p>{user && user.name}</p>
                 </span>
               </div>
@@ -52,10 +52,12 @@ const NavbarInside = () => {
         <input type='checkbox' id='nav-check'></input>
         <div className='nav-links'>
             <Link to='/home'>HOME</Link>
-            <Link to='/financehelp'>FINANCIAL HELP</Link>
+            <Link to='/financehelp'>APPLY FOR LOAN</Link>
             <Link to='/categories'>CONNECT WITH PEERS</Link>
             <Link to='/shgroups'>SELF HELP GROUPS</Link>
-            <Link to='/settings'>PROFILE</Link>
+            <Link to='/'>SELL YOUR PRODUCTS</Link>
+            <Link to='/'>CUSTOMER SUPPORT</Link>
+            <Link to='/settings'>MANAGE PROFILE</Link>
             <Link onClick={onLogout} to='/' className='loginbtn'>LOGOUT</Link>
         </div>
       </nav>

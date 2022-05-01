@@ -16,9 +16,9 @@ const About = () => {
                         <img src={logoabt1} className='about-img'></img>
                     </div>
                     <div className='about-text'>
-                        <h2>Financial Help</h2>
+                        <h2>Financial Support</h2>
                         <p>
-                        Let your customers order and pay via the powerful ecommerce system, or simple let them call your store.
+                        Adya has recognized funding as a major issue for women entrepreneurs who want to start or grow their businesses. Adya offers guidance on various funding options, including equity, loans, applicable programmes and grants etc.
                         </p>
                     </div>
                 </div>
@@ -29,8 +29,8 @@ const About = () => {
                     </div>
                     <div className='about-text'>
                         <h2>Connectivity</h2>
-                        <p>
-                        Let your customers order and pay via the powerful ecommerce system, or simple let them call your store.
+                        <p className='p1'>
+                        Adya's ultimate objective is to create a strong network of rural women entrepreneurs to create an ecosystem of support, learning, and collaboration based on the phrase "many hands make light work".
                         </p>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ const About = () => {
                     <div className='about-text'>
                         <h2>E-Marketplace</h2>
                         <p>
-                            Let your customers order and pay via the powerful ecommerce system, or simple let them call your store.
+                        Adya offers marketing support to startups to help them improve their market for their products. The objective of this initiative is to create a platform which helps to iteratively increase your market presence.
                         </p>
                     </div>
                 </div>

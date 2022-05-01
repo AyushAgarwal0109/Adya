@@ -55,5 +55,9 @@
     border-bottom: 2px solid #9A69C2;
     border-radius: 0px 0px 20px 20px;
     position: relative;
+    font-size: 0.9em;
     top: -13px;
+}
+.about-text .p1{
+font-size: 0.89em;
 }

@@ -21,14 +21,14 @@
 }
 
 .donate-form h1{
-    padding-left: 50px;
+    padding-left: 10px;
     margin-bottom: 10px;
 }
 
 .donate-inner form input{
     outline: 2px solid black;
     border-radius: 20px;
-    width: 70% !important;
+    width: 100% !important;
 }
 
 .donate-inner form ::placeholder{
