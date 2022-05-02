@@ -1,6 +1,9 @@
 import '../../assets/css/navbar.css';
 import LogoMain from '../../assets/logos/logo-main.png';
 import { Link } from 'react-router-dom';
+import '../../assets/css/modal.css';
+import Login from '../auth/Login';
+import Register from '../auth/Register';
 
 const NavbarMain = () => {
   let URL;
@@ -32,14 +35,9 @@ const NavbarMain = () => {
             HOME
           </a>
           <a href={`${URL}/#about`}>ABOUT</a>
-          <Link to='/schemes'>SCHEMES</Link>
           <a href={`${URL}/#contact`}>CONTACT</a>
-          <Link to='/login' className='loginbtn'>
-            LOGIN
-          </Link>
-          <Link to='/register' className='signupbtn'>
-            SIGNUP
-          </Link>
+          <a href={`${URL}/#login`} className='loginbtn'>LOGIN</a><Login />
+          <a href={`${URL}/#signup`} className='signupbtn'>SIGNUP</a><Register />
         </div>
       </nav>
     </>

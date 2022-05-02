@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import swal from 'sweetalert';
-// import { Link } from 'react-router-dom';
+import '../../assets/css/modal.css';
 import '../../assets/css/form.css';
+import Loader from '../../assets/images/Loader123.gif';
 
 // Testing
 const Login = (props) => {
@@ -59,13 +60,15 @@ const Login = (props) => {
       });
     }
   };
-
-  return (
-    <div className='wrapper-out'>
-      <div className='wrapper wrapper2'>
-        <h1>LOGIN.</h1>
-        <form onSubmit={onSubmit}>
+  return ( 
+    <>
+    <div id="login" className="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close">Close</a>
+          <h1>LOGIN</h1>
+          <form onSubmit={onSubmit}>
           <div className='form-group'>
+            
             <label htmlFor='phone'>Phone Number</label>
             <input
               type='text'
@@ -78,7 +81,7 @@ const Login = (props) => {
             />
           </div>
           <div className='form-group'>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>PIN</label>
             <input
               type='password'
               name='password'
@@ -88,27 +91,16 @@ const Login = (props) => {
               required
             />
           </div>
-          <input type='submit' value='Login' className='btn-sbmt' />
-          {/* <Link to='/home' className='btn btn-primary btn-block'>
-          Login
-        </Link> */}
-
-          <ul class='bg-bubbles'>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </form>
+          <div className='btn-sbmt-cont'>
+          <button type='submit' value='Login' className='btn-sbmt'>Submit <img src={Loader} className='loginbtn-loader'></img></button>
+          
+          </div>
+          </form>
       </div>
     </div>
-  );
-};
-
+    </>
+   );
+}
+ 
 export default Login;
+

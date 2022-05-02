@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 import '../../assets/css/sidenav.css';
 import LogoMain from '../../assets/logos/logo-main.png';
-import Floral from '../../assets/images/floral.png';
 
 const SideNav = () => {
   const authContext = useContext(AuthContext);
@@ -22,7 +21,7 @@ const SideNav = () => {
           </Link>
         </div>
         <div>
-          <img className='floral' src={Floral}></img>
+          <img className='floral'></img>
         </div>
         <div class='dash-item'>
           <Link to='/home'>HOME</Link>

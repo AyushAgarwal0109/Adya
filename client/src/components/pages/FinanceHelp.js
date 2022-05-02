@@ -3,6 +3,7 @@ import AuthContext from '../../context/auth/authContext';
 import SideNav from '../layout/SideNav';
 import LoanForm from './LoanForm';
 import '../../assets/css/home.css';
+import NavbarInside from '../layout/NavbarInside';
 
 const FinanceHelp = () => {
   const authContext = useContext(AuthContext);
@@ -14,9 +15,9 @@ const FinanceHelp = () => {
   }, []);
 
   return (
-    <div className='grid-2 home-outer'>
+    <div className='home-outer'>
       <div>
-        <SideNav />
+        <NavbarInside />
       </div>
       <div>
         <LoanForm />

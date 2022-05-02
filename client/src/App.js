@@ -7,8 +7,10 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import NavbarMain from './components/layout/NavbarMain';
 import AboutMain from './components/layout/About';
 import Contact from './components/layout/ContactUs';
+import Schemes from './components/layout/Schemes';
+import Donate from './components/layout/Donate';
 import Banner from '../../client/src/components/layout/Banner';
-import Schemes from '../../client/src/components/layout/Schemes';
+import Testimonials from './components/layout/Testimonials';
 import Finance from '../../client/src/components/pages/FinanceHelp';
 import News from './components/layout/Newsletter';
 
@@ -31,42 +33,32 @@ const App = () => {
       <AuthState>
         <Router>
           <Fragment className='App'>
-            {/* <Navbar /> */}
             <div>
               <Switch>
                 <PrivateRoute exact path='/home'>
-                  <Home />
+                <Home />
                 </PrivateRoute>
                 <PrivateRoute exact path='/categories'>
-                  <Categories />
+                <Categories />
                 </PrivateRoute>
                 <PrivateRoute exact path='/shgroups'>
-                  <Shgroups />
+                <Shgroups />
                 </PrivateRoute>
                 <PrivateRoute exact path='/financehelp'>
-                  <Finance />
+                <Finance />
                 </PrivateRoute>
                 <PrivateRoute exact path='/settings'>
-                  <Settings />
+                <Settings />
                 </PrivateRoute>
                 <Route exact path='/'>
                   <NavbarMain />
                   <Banner />
                   <AboutMain />
-                  <Contact />
-                  <News />
-                </Route>
-                <Route exact path='/register'>
-                  <NavbarMain />
-                  <Register />
-                </Route>
-                <Route exact path='/schemes'>
-                  <NavbarMain />
                   <Schemes />
-                </Route>
-                <Route exact path='/login'>
-                  <NavbarMain />
-                  <Login />
+                  <Donate />
+                  <News />
+                  <Testimonials />
+                  <Contact /> 
                 </Route>
               </Switch>
             </div>

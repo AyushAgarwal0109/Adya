@@ -412,13 +412,13 @@ table th {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #fc2956;
+  background: #9a69c2;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #fc2956;
+  background: #9a69c2;
 }
 
 /* Mobile Styles */

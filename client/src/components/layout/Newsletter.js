@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import '../../assets/css/news.css';
-import NewsPhoto from '../../assets/images/news-photo.png';
+import '../../assets/css/news-cards.css';
+import NewsPhoto from '../../assets/images/NEWS-1.png';
+import AOS from "aos";
 
 const Newletter = () => {
   const [email, setEmail] = useState('');
@@ -41,36 +43,51 @@ const Newletter = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration : 1000
+    });
+  }, []);
+
   return (
     <>
       <div className='hello-about' id='about'></div>
       <div className='news-main'>
         <div className='news-inner'>
-          <div className='news-left'>
-            <div className='main-headingsz'>NEWSLETTER</div>
-            <div className='news-body'>
-              <form onSubmit={onSubmit}>
-                <div className='form-group'>
-                  <label htmlFor='email'>Email ID : </label>
-                  <input
-                    type='email'
-                    name='newsletter'
-                    onChange={onChange}
-                    placeholder='example@xyz.com'
-                    autoComplete='off'
-                    required
-                  />
+                <div className='news-heading2'>
+                    <h1> समाचार / </h1>
                 </div>
-                <input
-                  type='submit'
-                  value='Submit'
-                  className='btn-sbmt-final'
-                />
-              </form>
-            </div>
-          </div>
-          <div className='news-right'>
-            <img className='news-photo' src={NewsPhoto}></img>
+                <div className='news-heading'>
+                    <h1> NEWS. </h1>
+                </div>
+          <div className='news-inner-inner'>
+            <figure class="icon-cards mt-3"  data-aos="fade-left">
+              <div class="icon-cards__content">
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center">
+
+                </div>
+              </div>
+            </figure>
           </div>
         </div>
       </div>
