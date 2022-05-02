@@ -1,12 +1,26 @@
 import React from 'react'
+import { useEffect } from "react";
 import "../../assets/css/testimonials.css";
 import image1 from "../../assets/images/RumaDevi.jpeg";
 import image2 from "../../assets/images/RumaDevi2.jpg";
 import image3 from "../../assets/images/RumaDevi3.png";
 import "../../assets/css/testimonials.css";
 import testimonial from '../../assets/images/testimoniall2.png';
+import AOS from "aos";
 
 function Testimonials() {
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration : 1000
+    });
+  }, []);
+
   return (
     <div>
         <center>
@@ -15,7 +29,7 @@ function Testimonials() {
           <div className='col-sm-10'>
             <div className='row'>
             <div className='col-sm-4'>
-            <div className="testimonial-img">       
+            <div className="testimonial-img" data-aos="zoom-in-right">       
                 <div className="testi-img" style={{display:'flex',flexDirection:'column'}}>
                   <div>
                       <center>
@@ -33,7 +47,7 @@ function Testimonials() {
               </div>
             </div>
             <div className='col-sm-4'>
-            <div className="testimonial-img">       
+            <div className="testimonial-img" data-aos="zoom-in-down">       
                 <div className="testi-img" style={{display:'flex',flexDirection:'column'}}>
                   <div>
                       <center>
@@ -51,7 +65,7 @@ function Testimonials() {
               </div>
             </div>
             <div className='col-sm-4'>
-              <div className="testimonial-img">       
+              <div className="testimonial-img" data-aos="zoom-in-left">       
                 <div className="testi-img" style={{display:'flex',flexDirection:'column'}}>
                   <div>
                       <center>

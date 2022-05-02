@@ -62,7 +62,7 @@ const Login = (props) => {
   };
   return ( 
     <>
-    <div id="open-modal" className="modal-window">
+    <div id="login" className="modal-window">
       <div>
         <a href="#" title="Close" class="modal-close">Close</a>
           <h1>LOGIN</h1>

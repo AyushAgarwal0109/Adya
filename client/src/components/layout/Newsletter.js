@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import '../../assets/css/news.css';
 import '../../assets/css/news-cards.css';
 import NewsPhoto from '../../assets/images/NEWS-1.png';
+import AOS from "aos";
 
 const Newletter = () => {
   const [email, setEmail] = useState('');
@@ -42,6 +43,17 @@ const Newletter = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration : 1000
+    });
+  }, []);
+
   return (
     <>
       <div className='hello-about' id='about'></div>
@@ -54,7 +66,7 @@ const Newletter = () => {
                     <h1> NEWS. </h1>
                 </div>
           <div className='news-inner-inner'>
-            <figure class="icon-cards mt-3">
+            <figure class="icon-cards mt-3"  data-aos="fade-left">
               <div class="icon-cards__content">
                 <div class="icon-cards__item d-flex align-items-center justify-content-center">
 

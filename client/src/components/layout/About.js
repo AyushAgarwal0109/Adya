@@ -1,17 +1,31 @@
+import React, { useEffect } from "react";
 import '../../assets/css/about.css';
 import LogoMain from '../../assets/logos/logo-main.png';
 import logoabt1 from '../../assets/logos/finance.svg';
 import logoabt2 from '../../assets/logos/connect.svg';
 import logoabt3 from '../../assets/logos/market.svg';
+import AOS from "aos";
 
 const About = () => {
+
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
+
+      useEffect(() => {
+        AOS.init({
+          duration : 500
+        });
+      }, []);
+
     return ( 
         <>
         <div className="hello-about" id="about"></div>
         <div className="about-main">
             <div className="about-inner row">
 
-                <div className='abouter about-1 col-sm-4'>
+                <div className='abouter about-1 col-sm-4' data-aos="zoom-in-right">
                     <div className='about-photo'>
                         <img src={logoabt1} className='about-img'></img>
                     </div>
@@ -23,7 +37,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className='abouter about-2 col-sm-4'>
+                <div className='abouter about-2 col-sm-4' data-aos="zoom-in-down">
                     <div className='about-photo'>
                         <img src={logoabt2} className='about-img'></img>
                     </div>
@@ -35,7 +49,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className='abouter about-3 col-sm-4'>
+                <div className='abouter about-3 col-sm-4' data-aos="zoom-in-left">
                     <div className='about-photo'>
                         <img src={logoabt3} className='about-img'></img>    
                     </div>

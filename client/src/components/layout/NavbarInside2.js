@@ -43,15 +43,9 @@ const NavbarInside = () => {
             </div>
           </div>
         </div>
-        <div className='nav-btn'>
-          <label for='nav-check'>
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
         <div className='nav-btn-22 navbar-back-arrow'>
-          <Link to='/home'>
+          <Link onClick={onLogout} to='/'>
+              
           <i class="fa-solid fa-2x fa-circle-chevron-left"></i>
           </Link>
         </div>

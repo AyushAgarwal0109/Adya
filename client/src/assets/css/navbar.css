@@ -144,8 +144,24 @@
     .nav-inside > .nav-btn {
       display: inline-block;
       position: absolute;
-      top: 25%;
-      left: 97%;
+      top: 30%;
+      left: 95%;
+      transform: translate(-50%, -50%);
+    }
+
+    .nav-inside > .nav-btn-22 {
+      display: inline-block;
+      position: absolute;
+      top: 42%;
+      left: 5%;
+      transform: translate(-50%, -50%);
+    }
+
+    .nav-inside > .nav-btn-11 {
+      display: inline-block;
+      position: absolute;
+      top: 44%;
+      left: 93%;
       transform: translate(-50%, -50%);
     }
 
@@ -155,6 +171,11 @@
       border-radius: 100px;
       border: 2px solid white;
       padding: 2px;
+      margin-left: 0;
+    }
+
+    .navbar-back-arrow i{
+      color: white;
     }
 
     .nav-title {

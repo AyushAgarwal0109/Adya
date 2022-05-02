@@ -85,7 +85,7 @@ const Shgroups = () => {
           <div>
             <NavbarInside />
           </div>
-          <div className='wrapper'>
+          {/* <div className='wrapper'>
             <form onSubmit={onSubmit}>
               <h1>SELF HELP GROUP!</h1>
               <div className='form-group'>
@@ -180,7 +180,7 @@ const Shgroups = () => {
                 <li></li>
               </ul>
             </form>
-          </div>
+          </div> */}
         </div>
       );
     else return <YourGroup />;

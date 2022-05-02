@@ -89,7 +89,7 @@ const Register = (props) => {
     return ( 
         <>
 
-<div id="open-modal2" className="modal-window2">
+<div id="signup" className="modal-window2">
       <div>
         <a href="#" title="Close" class="modal-close">Close</a>
         <h1>SIGN UP</h1>

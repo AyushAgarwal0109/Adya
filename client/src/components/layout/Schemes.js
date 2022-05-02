@@ -1,5 +1,20 @@
+import React, { useEffect } from "react";
 import '../../assets/css/schemes.css';
+import AOS from "aos";
+
 const Schemes = () => {
+
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
+
+      useEffect(() => {
+        AOS.init({
+          duration : 1000
+        });
+      }, []);
+
     return ( 
         <div className='schemes-outer'>
             <div className='schemes-inner row'>
@@ -13,28 +28,28 @@ const Schemes = () => {
             </div>
             <div className="page-content col-sm-11">
             
-                <div className="cardcard">
+                <div className="cardcard" data-aos="fade-up">
                     <div className="content">
                     <h2 className="title">MAHILA UDYAM NIDHI SCHEME</h2>
                     <p className="copy">This scheme promotes MSMEs and small sector investments in different industries to grow and excel in their areas.</p>
                     <a href="https://www.msmex.in/learn/what-is-mahila-udyam-nidhi-scheme/" target="_blank" rel="noopener noreferrer"><button className="btnschemes">Know More!</button></a>
                     </div>
                 </div>
-                <div className="cardcard">
+                <div className="cardcard" data-aos="fade-down">
                     <div className="content">
                     <h2 className="title">ORIENT MAHILA VIKAS YOJANA</h2>
                     <p className="copy">This scheme is for women who hold 51% share capital separately or collectively as a proprietary concern.</p>
                     <a href="https://www.govtgk.com/orient-mahila-vikas-yojana/" target="_blank" rel="noopener noreferrer"><button className="btnschemes">Know More!</button></a>
                     </div>
                 </div>
-                <div className="cardcard">
+                <div className="cardcard" data-aos="fade-up">
                     <div className="content">
                     <h2 className="title">DENA SHAKTI SCHEME</h2>
                     <p className="copy"> This scheme is for women entrepreneurs but limited only to those which are small enterprises or micr-credit organizations.</p>
                     <a href="https://aatmnirbharsena.org/blog/dena-shakti-scheme/" target="_blank" rel="noopener noreferrer"><button className="btnschemes">Know More!</button></a>
                     </div>
                 </div>
-                <div className="cardcard">
+                <div className="cardcard" data-aos="fade-down">
                     <div className="content">
                     <h2 className="title">UDYOGINI SCHEME</h2>
                     <p className="copy">This program encourages women to be self reliant and help them in self development by empowering them economically.</p>

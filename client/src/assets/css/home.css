@@ -246,7 +246,7 @@ min-height: 100vh;
   .home-box-heading{
     background-color: #9a69c2;
     padding: 10px 0;
-    border-radius: 10px 10px 5px 5px;
+    border-radius: 20px 20px 5px 5px;
     position: relative;
     top: -1px;
     color: white;
@@ -269,6 +269,7 @@ min-height: 100vh;
     position: relative;
     left: 60px;
     text-align: left;
+    color: black;
     font-family: 'Poppins', sans-serif;
   }
 
@@ -296,7 +297,7 @@ min-height: 100vh;
   }  
 
   .bxr6{
-    font-size: 0.72em;
+    font-size: 0.71em;
   }
 
   .box-inner-img{

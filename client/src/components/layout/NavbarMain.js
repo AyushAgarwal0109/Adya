@@ -36,8 +36,8 @@ const NavbarMain = () => {
           </a>
           <a href={`${URL}/#about`}>ABOUT</a>
           <a href={`${URL}/#contact`}>CONTACT</a>
-          <a href='#open-modal' className='loginbtn'>LOGIN</a><Login />
-          <a href='#open-modal2' className='signupbtn'>SIGNUP</a><Register />
+          <a href={`${URL}/#login`} className='loginbtn'>LOGIN</a><Login />
+          <a href={`${URL}/#signup`} className='signupbtn'>SIGNUP</a><Register />
         </div>
       </nav>
     </>
