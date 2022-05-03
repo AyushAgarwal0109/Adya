@@ -83,23 +83,23 @@ router.post(
 );
 
 router.put('/:id', async (req, res) => {
-  const { name, phone, skill, district, state, group, password } = req.body;
+  const { userName, phoneNo, skill, district, state, group, pin } = req.body;
 
   //Build Contact object
   const userFields = {};
-  if (name) userFields.name = name;
-  if (phone) userFields.phone = phone;
+  if (userName) userFields.name = userName;
+  if (phoneNo) userFields.phone = phoneNo;
   if (skill) userFields.skill = skill;
   if (district) userFields.district = district;
   if (state) userFields.state = state;
   if (group) userFields.group = group;
-  if (password) {
+  if (pin) {
     const salt = await bcrypt.genSalt(10);
-    userFields.password = await bcrypt.hash(password, salt);
+    userFields.password = await bcrypt.hash(pin, salt);
   }
 
   try {
-    let user = await User.find(req.params.id);
+    let user = await User.findById(req.params.id);
 
     if (!user) return res.status(404).json({ msg: 'User not found' });
 

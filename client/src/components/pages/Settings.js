@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext, useEffect } from 'react';
 import { connect } from 'mongoose';
 import AuthContext from '../../context/auth/authContext';
@@ -6,15 +6,47 @@ import SideNav from '../layout/SideNav';
 import '../../assets/css/home.css';
 import Updatelogo from '../../assets/logos/update-logo.png';
 import NavbarInside from '../layout/NavbarInside';
+import swal from 'sweetalert';
+import axios from 'axios';
 
 const Settings = () => {
   const authContext = useContext(AuthContext);
   const { user } = authContext;
+  const [userName, setUserName] = useState();
+  const [phoneNo, setPhoneNo] = useState();
+  const [group, setGroup] = useState();
+  const [skill, setSkill] = useState();
+  const [pin, setPin] = useState();
 
   useEffect(() => {
     authContext.loadUser();
     // eslint-disable-next-line
   }, []);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const formData = { userName, phoneNo, skill, group, pin };
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    try {
+      const res = await axios.put(`/api/users/${user._id}`, formData, config);
+      swal({
+        text: 'User data successfully updated!',
+        icon: 'success',
+      });
+      authContext.loadUser();
+      setUserName('');
+      setPhoneNo('');
+      setSkill('');
+      setPin('');
+      setGroup('');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className='home-outer'>
@@ -32,14 +64,26 @@ const Settings = () => {
                   <span>
                     <img className='updater' src={Updatelogo}></img>
                   </span>
-                  <input type='text' name='namee' value={user.name} />
+                  <input
+                    type='text'
+                    name='namee'
+                    placeholder={user.name}
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                  />
                 </div>
                 <div className='form-group col-sm-6'>
                   <label htmlFor='phonenumber'>Phone Number : </label>
                   <span>
                     <img className='updater' src={Updatelogo}></img>
                   </span>
-                  <input type='text' name='phone' value={user.phone} />
+                  <input
+                    type='text'
+                    name='phone'
+                    placeholder={user.phone}
+                    value={phoneNo}
+                    onChange={(e) => setPhoneNo(e.target.value)}
+                  />
                 </div>
               </div>
               <div className='row'>
@@ -48,7 +92,13 @@ const Settings = () => {
                   <span>
                     <img className='updater' src={Updatelogo}></img>
                   </span>
-                  <input type='text' name='skill' value={user.skill} />
+                  <input
+                    type='text'
+                    name='skill'
+                    placeholder={user.skill}
+                    value={skill}
+                    onChange={(e) => setSkill(e.target.value)}
+                  />
                 </div>
                 <div className='form-group col-sm-6'>
                   <label htmlFor='group'>
@@ -57,7 +107,13 @@ const Settings = () => {
                   <span>
                     <img className='updater' src={Updatelogo}></img>
                   </span>
-                  <input type='text' name='group' value={user.group} />
+                  <input
+                    type='text'
+                    name='group'
+                    placeholder={user.group}
+                    value={group}
+                    onChange={(e) => setGroup(e.target.value)}
+                  />
                 </div>
               </div>
               <div className='row'>
@@ -66,10 +122,21 @@ const Settings = () => {
                   <span>
                     <img className='updater' src={Updatelogo}></img>
                   </span>
-                  <input type='password' name='password' value={'****'} />
+                  <input
+                    type='password'
+                    name='password'
+                    placeholder='****'
+                    value={pin}
+                    onChange={(e) => setPin(e.target.value)}
+                  />
                 </div>
               </div>
-              <input type='submit' value='Update' className='btn-sbmt' />
+              <input
+                type='submit'
+                value='Update'
+                className='btn-sbmt'
+                onClick={onSubmit}
+              />
               <ul class='bg-bubbles'>
                 <li></li>
                 <li></li>
