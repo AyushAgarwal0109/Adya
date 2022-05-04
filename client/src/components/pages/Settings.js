@@ -17,6 +17,7 @@ const Settings = () => {
   const [group, setGroup] = useState();
   const [skill, setSkill] = useState();
   const [pin, setPin] = useState();
+  const [canEdit, setCanEdit] = useState(false);
 
   useEffect(() => {
     authContext.loadUser();
@@ -48,6 +49,12 @@ const Settings = () => {
     }
   };
 
+  const handleEdit = (e) => {
+    e.preventDefault();
+
+    setCanEdit(!canEdit);
+  };
+
   return (
     <div className='home-outer'>
       <div>
@@ -69,6 +76,7 @@ const Settings = () => {
                     name='namee'
                     placeholder={user.name}
                     value={userName}
+                    disabled={!canEdit}
                     onChange={(e) => setUserName(e.target.value)}
                   />
                 </div>
@@ -82,6 +90,7 @@ const Settings = () => {
                     name='phone'
                     placeholder={user.phone}
                     value={phoneNo}
+                    disabled={!canEdit}
                     onChange={(e) => setPhoneNo(e.target.value)}
                   />
                 </div>
@@ -97,6 +106,7 @@ const Settings = () => {
                     name='skill'
                     placeholder={user.skill}
                     value={skill}
+                    disabled={!canEdit}
                     onChange={(e) => setSkill(e.target.value)}
                   />
                 </div>
@@ -112,6 +122,7 @@ const Settings = () => {
                     name='group'
                     placeholder={user.group}
                     value={group}
+                    disabled={!canEdit}
                     onChange={(e) => setGroup(e.target.value)}
                   />
                 </div>
@@ -127,6 +138,7 @@ const Settings = () => {
                     name='password'
                     placeholder='****'
                     value={pin}
+                    disabled={!canEdit}
                     onChange={(e) => setPin(e.target.value)}
                   />
                 </div>
@@ -137,6 +149,9 @@ const Settings = () => {
                 className='btn-sbmt'
                 onClick={onSubmit}
               />
+              <button className='btn-sbmt' onClick={(e) => handleEdit(e)}>
+                Edit
+              </button>
               <ul class='bg-bubbles'>
                 <li></li>
                 <li></li>

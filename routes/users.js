@@ -17,6 +17,7 @@ router.post(
     check('skill', 'Please add skill').not().isEmpty(),
     check('district', 'Please add district').not().isEmpty(),
     check('state', 'Please add state').not().isEmpty(),
+    check('address', 'Please add address').not().isEmpty(),
     check('group', 'Please add group').not().isEmpty(),
     check('phone', 'Please enter a phone number with 10 digits').isLength({
       min: 10,
@@ -33,7 +34,8 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, phone, skill, district, state, group, password } = req.body;
+    const { name, phone, skill, district, state, address, group, password } =
+      req.body;
 
     try {
       let user = await User.findOne({ phone });
@@ -46,6 +48,7 @@ router.post(
         name,
         phone,
         skill,
+        address,
         district,
         group,
         state,
@@ -83,13 +86,15 @@ router.post(
 );
 
 router.put('/:id', async (req, res) => {
-  const { userName, phoneNo, skill, district, state, group, pin } = req.body;
+  const { userName, phoneNo, skill, address, district, state, group, pin } =
+    req.body;
 
   //Build Contact object
   const userFields = {};
   if (userName) userFields.name = userName;
   if (phoneNo) userFields.phone = phoneNo;
   if (skill) userFields.skill = skill;
+  if (address) userFields.address = address;
   if (district) userFields.district = district;
   if (state) userFields.state = state;
   if (group) userFields.group = group;
