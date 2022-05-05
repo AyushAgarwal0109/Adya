@@ -1,5 +1,5 @@
 import { connect } from 'mongoose';
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import '../../assets/css/home.css';
 import Avatar from '../../assets/logos/avatar2.png';
@@ -7,6 +7,11 @@ import Avatar from '../../assets/logos/avatar2.png';
 const CategoryCard = ({ connectingUsers }) => {
   const authContext = useContext(AuthContext);
   const { user } = authContext;
+
+  useEffect(() => {
+    authContext.loadUser();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className='mainin-1 right-right' align='center'>

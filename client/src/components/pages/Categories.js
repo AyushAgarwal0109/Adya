@@ -21,11 +21,6 @@ const Categories = () => {
   };
 
   useEffect(() => {
-    authContext.loadUser();
-    // eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
     displayUsers();
   }, []);
 

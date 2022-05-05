@@ -7,7 +7,7 @@ const LoanForm = () => {
     purpose: '',
     amount: '',
     assets: '',
-    time: 0,
+    time: '',
     scheme: '',
   });
 
@@ -21,7 +21,7 @@ const LoanForm = () => {
       purpose === '' ||
       amount === '' ||
       assets === '' ||
-      time === 0 ||
+      time === '' ||
       scheme === ''
     ) {
       swal({
@@ -60,8 +60,8 @@ const LoanForm = () => {
   return (
     <div className='wrapper'>
       <h1>
-        <br/>
-      FINANCIAL HELP!
+        <br />
+        FINANCIAL HELP!
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
@@ -70,7 +70,8 @@ const LoanForm = () => {
             type='text'
             name='purpose'
             value={purpose}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
@@ -80,7 +81,8 @@ const LoanForm = () => {
             type='text'
             name='amount'
             value={amount}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
@@ -90,49 +92,51 @@ const LoanForm = () => {
             type='text'
             name='assets'
             value={assets}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='time'>Enter the time duration within which the loan is required : </label>
+          <label htmlFor='time'>
+            Enter the time duration within which the loan is required :{' '}
+          </label>
           <input
             type='text'
             name='time'
             value={time}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='scheme'>Under which scheme do you want to apply? </label>
+          <label htmlFor='scheme'>
+            Under which scheme do you want to apply?{' '}
+          </label>
           <input
             type='text'
             name='scheme'
             value={scheme}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
-        <input
-          type='submit'
-          value='Submit'
-          className='btn-sbmt'
-        />
-          <ul class="bg-bubbles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
+        <input type='submit' value='Submit' className='btn-sbmt' />
+        <ul class='bg-bubbles'>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </form>
-      
     </div>
   );
 };

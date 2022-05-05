@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ShgroupsSchema = mongoose.Schema({
-  user: {
+  createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users',
   },
@@ -17,6 +17,12 @@ const ShgroupsSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  memberList: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'users',
+    },
+  ],
   phone: {
     type: Number,
     required: true,

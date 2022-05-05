@@ -6,7 +6,12 @@ const User = require('../models/User');
 
 router.get('/', auth, async (req, res) => {
   try {
-    const groups = await Shgroup.find();
+    const loggedUser = await User.findById(req.user.id);
+    const groups = await Shgroup.find({
+      $and: [{ business: loggedUser.skill }],
+    }).sort({
+      date: -1,
+    });
     res.json(groups);
   } catch (error) {
     console.error(error.message);

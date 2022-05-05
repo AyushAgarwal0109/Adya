@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const LoanSchema = mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'users',
+  },
   purpose: {
     type: String,
     required: true,

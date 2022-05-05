@@ -1,8 +1,19 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth');
 const Loan = require('../models/Loan');
 
-router.post('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
+  try {
+    const loans = await Loan.find({ user: req.user.id });
+    res.json(loans);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+router.post('/', auth, async (req, res) => {
   const { purpose, amount, assets, time, scheme } = req.body;
 
   try {
@@ -13,6 +24,7 @@ router.post('/', async (req, res) => {
     }
 
     loan = new Loan({
+      user: req.user.id,
       purpose,
       amount,
       assets,
