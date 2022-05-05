@@ -159,17 +159,6 @@ const Register = (props) => {
               </div>
 
               <div className='form-group col-md-3'>
-                <label htmlFor='state'>State</label>
-                <input
-                  type='text'
-                  name='state'
-                  value={state}
-                  onChange={onChange}
-                  required
-                  autoComplete='off'
-                />
-              </div>
-              <div className='form-group col-md-3'>
                 <label htmlFor='district'>District</label>
                 <input
                   type='text'
@@ -180,6 +169,19 @@ const Register = (props) => {
                   autoComplete='off'
                 />
               </div>
+
+              <div className='form-group col-md-3'>
+                <label htmlFor='state'>State</label>
+                <input
+                  type='text'
+                  name='state'
+                  value={state}
+                  onChange={onChange}
+                  required
+                  autoComplete='off'
+                />
+              </div>
+
             </div>
 
             <div className='row'>
@@ -222,7 +224,7 @@ const Register = (props) => {
               </div>
             </div>
             <button type='submit' value='Register' className='btn-sbmt'>
-              Register <img src={Loader} className='loginbtn-loader'></img>
+              Sign up <img src={Loader} className='loginbtn-loader'></img>
             </button>
           </form>
         </div>

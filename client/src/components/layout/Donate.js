@@ -1,127 +1,95 @@
-import '../../../src/assets/css/donate.css';
+import '../../assets/css/modal.css';
 import DonateImg from '../../assets/images/charity.svg';
+import Loader from '../../assets/images/Loader123.gif';
 const Donate = () => {
     return ( 
         <>
-        <div className="donate-outer">
-            <div className="donate-inner row">
-                <div className="donate-right col-sm-6">
-                    <div className='donate-form'>
-                        <h1>DONATE / दान</h1>
-                        <form>
-                        <div className='donate-center'>
-                        </div>
-                        <div className='row'>
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='text' name='name' autoComplete='off' placeholder='Name*' required/>
-                            </center>
-                        </div>
+    <div id="donate" className="modal-window2">
+      <div>
+        <a href="#" title="Close" class="modal-close">Close</a>
+          <h1>Donate</h1>
+          <form>
 
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='tel' name='phone' placeholder='Mobile Number*' autoComplete='off' required/>
-                            </center>
-                        </div>
+        <div className='row'>
+          <div className='form-group col-sm-4'>
+            <label htmlFor='name'>Name</label>
+            <input
+              type='text'
+              name='name'
+              autoComplete='off'
+              onChange=""
+              required
+            />
+          </div>
 
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='email' name='email' placeholder='Email*' autoComplete='off' required/>
-                            </center>
-                        </div>
-
-                        </div>
-
-                        <div className='row'>
-
-
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='text' name='PAN' placeholder='PAN Number' autoComplete='off'/>
-                            </center>
-                        </div>
-
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='number' name='amount' placeholder='Amount*' autoComplete='off' required/>
-                            </center>
-                        </div>
-
-                        <div className='form-group col-sm-4 btn-donate-cont'>
-                            <center>
-                                <input type='submit' name='Donate' value='Donate' className='btn-donate' autoComplete='off' required/>
-                            </center>
-                        </div>
-
-                        </div>
-
-                        </form>
-                    </div>
-                </div>
-
-                <div className="donate-right col-sm-6">
-                    <div className='donate-form'>
-                        <h1>DONATE / दान</h1>
-                        <form>
-                        <div className='donate-center'>
-                        </div>
-                        <div className='row'>
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='text' name='name' autoComplete='off' placeholder='Name*' required/>
-                            </center>
-                        </div>
-
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='tel' name='phone' placeholder='Mobile Number*' autoComplete='off' required/>
-                            </center>
-                        </div>
-
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='email' name='email' placeholder='Email*' autoComplete='off' required/>
-                            </center>
-                        </div>
-
-                        </div>
-
-                        <div className='row'>
-
-
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='text' name='PAN' placeholder='PAN Number' autoComplete='off'/>
-                            </center>
-                        </div>
-
-                        <div className='form-group col-sm-4'>
-                            <center>
-                                <input type='number' name='amount' placeholder='Amount*' autoComplete='off' required/>
-                            </center>
-                        </div>
-
-                        <div className='form-group col-sm-4 btn-donate-cont'>
-                            <center>
-                                <input type='submit' name='Donate' value='Donate' className='btn-donate' autoComplete='off' required/>
-                            </center>
-                        </div>
-
-                        </div>
-
-                        </form>
-                    </div>
-                </div>
-                {/* <div className="donate-right col-sm-2">
-                    <div className='donate-heading2'>
-                        <h1> दान / </h1>
-                    </div>
-                    <div className='donate-heading'>
-                        <h1> DONATE. </h1>
-                    </div>
-                </div> */}
-            </div>
+          <div className='form-group col-sm-4'>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='email'
+              name='email'
+              onChange=""
+              autoComplete='off'
+              required
+            />
+          </div>
+              
+          <div className='form-group col-sm-4'>
+            <label htmlFor='phone'>Phone Number</label>
+            <input
+              type='text'
+              name='phone'
+              onChange=""
+              autoComplete='off'
+              minLength="10" maxLength="10"
+              required
+            />
+          </div>
         </div>
+
+        <div className='row'>
+              
+          <div className='form-group col-sm-4'>
+            <label htmlFor='country'>Country</label>
+            <input
+              type='text'
+              name='country'
+              onChange=""
+              autoComplete='off'
+              minLength="10" maxLength="10"
+              required
+            />
+          </div>
+
+          <div className='form-group col-sm-4'>
+            <label htmlFor='amt'>Amount</label>
+            <input
+              type='number'
+              name='amt'
+              onChange=""
+              autoComplete='off'
+              required
+            />
+          </div>
+          
+          <div className='form-group col-sm-4'>
+            <label htmlFor='pan'>PAN Number</label>
+            <input
+              type='text'
+              name='pan'
+              autoComplete='off'
+              onChange=""
+              required
+            />
+          </div>
+        </div>
+
+          <div className='btn-sbmt-cont'>
+          <button type='submit' value='Login' className='btn-sbmt'>Donate <img src={Loader} className='loginbtn-loader'></img></button>
+          
+          </div>
+          </form>
+      </div>
+    </div>
         </>
      );
 }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../assets/css/modal.css';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
+import Donate from './Donate';
 
 const NavbarMain = () => {
   let URL;
@@ -36,6 +37,7 @@ const NavbarMain = () => {
           </a>
           <a href={`${URL}/#about`}>ABOUT</a>
           <a href={`${URL}/#contact`}>CONTACT</a>
+          <a href={`${URL}/#donate`}>DONATE</a><Donate />
           <a href={`${URL}/#login`} className='loginbtn'>LOGIN</a><Login />
           <a href={`${URL}/#signup`} className='signupbtn'>SIGNUP</a><Register />
         </div>

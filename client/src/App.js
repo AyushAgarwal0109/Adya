@@ -55,7 +55,6 @@ const App = () => {
                   <Banner />
                   <AboutMain />
                   <Schemes />
-                  <Donate />
                   <News />
                   <Testimonials />
                   <Contact /> 

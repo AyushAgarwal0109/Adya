@@ -6,6 +6,7 @@ import AuthContext from '../../context/auth/authContext';
 import Avatar from '../../assets/logos/avatar1.png'
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
+import NavbarInside from '../layout/NavbarInside';
 
 const YourGroup = () => {
 
@@ -34,9 +35,9 @@ const YourGroup = () => {
       }, []);
 
     return ( 
-        <div className='grid-2 home-outer'>
+        <div className='home-outer'>
         <div>
-          <SideNav />
+          <NavbarInside />
         </div>
         <div>
         <div className='mainin'>
@@ -48,6 +49,8 @@ const YourGroup = () => {
             {YourGroup && YourGroup.map((data) => {
         if (data.phone===user.phone)
           return (
+            <>
+            <div className='cardss-outer' align="center">
             <div className='cardss row' align="left">
               <div className='cards-inner-1 col-sm-2'>
                 <img className='avatar-card' src={Avatar}></img>
@@ -69,8 +72,7 @@ const YourGroup = () => {
                   </li>
                   <li align="left">
                     <button className="btn-sbmt" style={{'margin-top': '30px', 'backgroundColor': '#fc2956', 'color': 'white', 'width': '200px', 'position': 'relative', 'left': '-50px'}}>
-                        
-
+                      
                         <input type="checkbox" id="modal"></input>
                             <label for="modal" className="example-label">See Requests {">"}</label>
                             <label for="modal" className="modal-background"></label>
@@ -90,7 +92,8 @@ const YourGroup = () => {
                 </ul>
               </div>
             </div>
-          
+            </div>
+            </>
           );
       })}
             </div>

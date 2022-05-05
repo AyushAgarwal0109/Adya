@@ -28,9 +28,9 @@ min-height: 100vh;
     background: linear-gradient(to right, #b783e1, #9a69c2);
     position: absolute;
     color: white !important;
-    top: 50%;
-    left: 60%;
-    padding: 10px 60px;
+    top: 58%;
+    left: 50%;
+    padding: 0px 60px;
     overflow: hidden;
     transform: translate(-50%, -50%);
     border-radius: 50px;
@@ -38,7 +38,12 @@ min-height: 100vh;
 
   .wrapper22 {
     width: 50%;
-    padding: 50px;
+    padding: 30px 50px;
+  }
+
+  .wrapper33{
+    width: 70%;
+    padding: 20px 50px;
   }
 
   .wrapper22 label{
@@ -56,7 +61,7 @@ min-height: 100vh;
     outline: 0;
     border: none;
     background-color: rgba(255, 255, 255, 0.7);
-    width: 250px;
+    width: 100%;
     border-radius: 3px;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
@@ -66,9 +71,20 @@ min-height: 100vh;
     color: black;
     transition-duration: 0.25s;
     font-weight: 300;
+    border: 1px solid rgb(199, 197, 197) !important;
   }
   form input:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none !important; 
+  margin: 0 !important; 
+}
+
+  form ::placeholder{
+    color: black;
   }
 
   .btn-sbmt{
@@ -89,6 +105,7 @@ min-height: 100vh;
     color: black;
     transition-duration: 0.25s;
     font-weight: 300;
+    border-radius: 30px;
   }
 
   .btn-sbmt:hover{
@@ -309,6 +326,24 @@ min-height: 100vh;
     border-left: 1px solid rgba(225, 225, 225, 0.5);
   }
 
+  .connecter-cont{
+    padding: 50px 0;
+  }
+
+  .cardss-outer{
+    position: relative;
+    padding-top: 60px;
+  }
+
+  .cardss{
+    padding: 20px;
+    margin: 50px 0px 0 0px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 60%;
+    backdrop-filter: blur(5px);
+}
 
   .headingss{
     font-family: evo;
@@ -321,23 +356,13 @@ min-height: 100vh;
   }
 
   .list-cards{
-      padding: 20px 20px 10px 20px;
-  }
-
-  .cardss{
-      padding: 20px;
-      margin: 50px;
-      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, .15);
-      
-      backdrop-filter: blur(5px);
-  }
+      padding: 10px 10px 10px 0px;
+    }
 
   .loader-main{
       position: absolute;
-      left: 60%;
-      top: 50%;
+      left: 50%;
+      top: 55%;
       transform: translate(-50%, -50%);
       width: 200px;
   }
@@ -392,6 +417,5 @@ min-height: 100vh;
 
 .right-right{
   position: relative;
-  left: 100px;
-  padding-top: 50px;
+  padding: 50px 0;
 }

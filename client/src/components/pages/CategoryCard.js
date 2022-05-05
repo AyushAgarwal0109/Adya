@@ -19,29 +19,34 @@ const CategoryCard = ({ connectingUsers }) => {
         )
           return (
             <div className='cardss row' align='left'>
-              <div className='cards-inner-1 col-sm-2'>
-                <img className='avatar-card' src={Avatar}></img>
+              <div className='col-sm-10'>
+                <div className='row'>
+                  <div className='cards-inner-1 col-sm-2'>
+                    <img className='avatar-card' src={Avatar}></img>
+                  </div>
+                  <div className='cards-inner-2 col-sm-10'>
+                    <h3 className='headingss text-left'>{connect.name}</h3>
+                    <ul className='list-cards'>
+                      <li className='li-card'>
+                        <b>Mobile Number</b> {':'} {connect.phone}
+                      </li>
+                      <li className='li-card'>
+                        <b> Skills </b> {':'} {connect.skill}
+                      </li>
+                      <li className='li-card'>
+                        <b> Individual / Associated </b> {':'} {connect.group}
+                      </li>
+                      <li className='li-card'>
+                        <b> District</b> {':'} {connect.district}
+                      </li>
+                      <li className='li-card'>
+                        <b>State</b> {':'} {connect.state}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div className='cards-inner-2 col-sm-10'>
-                <h3 className='headingss text-left'>{connect.name}</h3>
-                <ul className='list-cards'>
-                  <li className='li-card'>
-                    <b>Mobile Number</b> {'->'} {connect.phone}
-                  </li>
-                  <li className='li-card'>
-                    <b>State</b> {'->'} {connect.state}
-                  </li>
-                  <li className='li-card'>
-                    <b> District</b> {'->'} {connect.district}
-                  </li>
-                  <li className='li-card'>
-                    <b> Individual/ Group </b> {'->'} {connect.group}
-                  </li>
-                  <li className='li-card'>
-                    <b> Skills </b>
-                    {'->'} {connect.skill}
-                  </li>
-                </ul>
+              <div className='col-sm-2'>
               </div>
             </div>
           );
