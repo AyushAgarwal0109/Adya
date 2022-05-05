@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-import swal from 'sweetalert'
+import swal from 'sweetalert';
 import SideNav from '../layout/SideNav';
 import AuthContext from '../../context/auth/authContext';
 import Avatar from '../../assets/logos/avatar1.png';
 import Spinner from '../layout/Spinner';
+import NavbarInside from '../layout/NavbarInside';
 
 const GroupInfo = () => {
   const authContext = useContext(AuthContext);
@@ -48,7 +49,7 @@ const GroupInfo = () => {
     <>
       <div className='grid-2 home-outer'>
         <div>
-          <SideNav />
+          <NavbarInside />
         </div>
         <div className='mainin'>
           <div className='mainin-1'>

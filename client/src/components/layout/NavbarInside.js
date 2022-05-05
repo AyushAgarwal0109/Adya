@@ -10,20 +10,20 @@ import Girlava from '../../assets/logos/girlava.png';
 import arrowback from '../../assets/images/arrow-back.svg';
 
 const NavbarInside = () => {
-    const authContext = useContext(AuthContext);
+  const authContext = useContext(AuthContext);
 
-    const { logout } = authContext;
-  
-    const onLogout = () => {
-      logout();
-    };
+  const { logout } = authContext;
 
-    const { user } = authContext;
-  
-    useEffect(() => {
-      authContext.loadUser();
-      // eslint-disable-next-line
-    }, []);
+  const onLogout = () => {
+    logout();
+  };
+
+  const { user } = authContext;
+
+  useEffect(() => {
+    authContext.loadUser();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
@@ -44,7 +44,7 @@ const NavbarInside = () => {
           </div>
         </div>
         <div className='nav-btn'>
-          <label for='nav-check'>
+          <label htmlFor='nav-check'>
             <span></span>
             <span></span>
             <span></span>
@@ -52,23 +52,23 @@ const NavbarInside = () => {
         </div>
         <div className='nav-btn-22 navbar-back-arrow'>
           <Link to='/home'>
-          <i class="fa-solid fa-2x fa-circle-chevron-left"></i>
+            <i class='fa-solid fa-2x fa-circle-chevron-left'></i>
           </Link>
         </div>
         <input type='checkbox' id='nav-check'></input>
         <div className='nav-links'>
-            <Link to='/home'>HOME</Link>
-            <Link to='/financehelp'>APPLY FOR LOAN</Link>
-            <Link to='/categories'>CONNECT WITH PEERS</Link>
-            <Link to='/shgroups'>SELF HELP GROUPS</Link>
-            <Link to='/'>SELL YOUR PRODUCTS</Link>
-            <Link to='/'>CUSTOMER SUPPORT</Link>
-            <Link to='/settings'>MANAGE PROFILE</Link>
-            <Link onClick={onLogout} to='/' className='loginbtn'>LOGOUT</Link>
+          <Link to='/home'>HOME</Link>
+          <Link to='/financehelp'>APPLY FOR LOAN</Link>
+          <Link to='/categories'>CONNECT WITH PEERS</Link>
+          <Link to='/shgroups'>SELF HELP GROUPS</Link>
+          <Link to='/'>SELL YOUR PRODUCTS</Link>
+          <Link to='/'>CUSTOMER SUPPORT</Link>
+          <Link to='/settings'>MANAGE PROFILE</Link>
+          <Link onClick={onLogout} to='/' className='loginbtn'>
+            LOGOUT
+          </Link>
         </div>
       </nav>
-
-      
     </>
   );
 };

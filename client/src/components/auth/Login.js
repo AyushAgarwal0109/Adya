@@ -92,7 +92,7 @@ const Login = (props) => {
             />
           </div>
           <div className='btn-sbmt-cont'>
-          <button type='submit' value='Login' className='btn-sbmt'>Submit <img src={Loader} className='loginbtn-loader'></img></button>
+          <button type='submit' value='Login' className='btn-sbmt'>Login <img src={Loader} className='loginbtn-loader'></img></button>
           
           </div>
           </form>

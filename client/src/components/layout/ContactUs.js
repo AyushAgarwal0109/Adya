@@ -38,7 +38,7 @@ const ContactUs = () => {
                         <div className='contact-right-links'>
                             <div><a href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Get Involved</a></div>
                             <div><a href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Apply for Artisan Card</a></div>
-                            <div><a href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Upcoming Exhibitions</a></div>
+                            <div><a href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Subscribe to Newsletter</a></div>
                         </div>
                         <div className='social-media-buttons-contact'>
                             <a target="blank" href="tel:+91-9910545503">

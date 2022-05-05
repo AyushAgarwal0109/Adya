@@ -3,7 +3,6 @@ import axios from 'axios';
 import AuthContext from '../../context/auth/authContext';
 import Spinner from '../layout/Spinner';
 import CategoryCard from './CategoryCard';
-import SideNav from '../layout/SideNav';
 import '../../assets/css/home.css';
 import NavbarInside from '../layout/NavbarInside';
 
@@ -31,7 +30,7 @@ const Categories = () => {
       <div>
         <NavbarInside />
       </div>
-      <div>
+      <div className='connecter-cont'>
         {connect.length !== 0 ? (
           <CategoryCard connectingUsers={connect} />
         ) : (

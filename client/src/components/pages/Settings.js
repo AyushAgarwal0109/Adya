@@ -143,15 +143,18 @@ const Settings = () => {
                   />
                 </div>
               </div>
+              <br></br>
+              <div className='row'>
+              <button className='btn-sbmt col-sm-6' onClick={(e) => handleEdit(e)}>
+                Edit
+              </button>
               <input
                 type='submit'
                 value='Update'
-                className='btn-sbmt'
+                className='btn-sbmt col-sm-6'
                 onClick={onSubmit}
               />
-              <button className='btn-sbmt' onClick={(e) => handleEdit(e)}>
-                Edit
-              </button>
+              </div>
               <ul class='bg-bubbles'>
                 <li></li>
                 <li></li>

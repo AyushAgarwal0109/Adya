@@ -58,13 +58,14 @@ const LoanForm = () => {
   };
 
   return (
-    <div className='wrapper'>
+    <div className='wrapper wrapper33'>
       <h1>
         <br />
         FINANCIAL HELP!
       </h1>
       <form onSubmit={onSubmit}>
-        <div className='form-group'>
+        <div className='row'>
+        <div className='form-group col-sm-6'>
           <label htmlFor='purpose'>Enter the purpose of the Loan : </label>
           <input
             type='text'
@@ -75,10 +76,10 @@ const LoanForm = () => {
             required
           />
         </div>
-        <div className='form-group'>
+        <div className='form-group col-sm-6'>
           <label htmlFor='amount'>Enter the Amount needed : </label>
           <input
-            type='text'
+            type='number'
             name='amount'
             value={amount}
             onChange={onChange}
@@ -86,21 +87,22 @@ const LoanForm = () => {
             required
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='assets'>Do you have assets for the loan? </label>
-          <input
-            type='text'
-            name='assets'
-            value={assets}
-            onChange={onChange}
-            autoComplete='off'
-            required
-          />
         </div>
-        <div className='form-group'>
-          <label htmlFor='time'>
-            Enter the time duration within which the loan is required :{' '}
-          </label>
+        <div className='row'>
+          <div className='form-group col-sm-6'>
+            <label htmlFor='assets'>Do you have assets for the loan? </label>
+            <input
+              type='text'
+              name='assets'
+              value={assets}
+              onChange={onChange} autoComplete="off"
+              required
+            />
+          </div>
+        </div>
+        <div className='row'>
+        <div className='form-group col-sm-6'>
+          <label htmlFor='time'>Enter the time duration within which the loan is required : </label>
           <input
             type='text'
             name='time'
@@ -110,10 +112,8 @@ const LoanForm = () => {
             required
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor='scheme'>
-            Under which scheme do you want to apply?{' '}
-          </label>
+        <div className='form-group col-sm-6'>
+          <label htmlFor='scheme'>Under which scheme do you want to apply? </label>
           <input
             type='text'
             name='scheme'
@@ -123,19 +123,24 @@ const LoanForm = () => {
             required
           />
         </div>
-        <input type='submit' value='Submit' className='btn-sbmt' />
-        <ul class='bg-bubbles'>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        </div>
+        <input
+          type='submit'
+          value='Submit'
+          className='btn-sbmt'
+        />
+          <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
       </form>
     </div>
   );

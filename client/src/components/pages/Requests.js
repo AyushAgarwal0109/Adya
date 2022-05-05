@@ -21,8 +21,18 @@ const Requests = ({ shg_id }) => {
   }, []);
 
   const changeStatus = async (id, status) => {
+    const data = JSON.stringify({
+      status: status,
+    });
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: data,
+    };
     try {
-      const res = axios.put(`/api/requests/${id}`);
+      const res = axios.put(`/api/requests/${id}`, config);
       swal({
         title: 'Success',
         text: res.data.msg,
