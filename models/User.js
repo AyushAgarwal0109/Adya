@@ -30,6 +30,12 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  shgList: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'shgroups',
+    },
+  ],
   address: {
     type: String,
     required: true,

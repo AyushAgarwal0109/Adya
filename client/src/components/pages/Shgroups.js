@@ -17,8 +17,7 @@ const Shgroups = () => {
   useEffect(() => {
     authContext.loadUser();
     if (user) setSubmitted(user.isSubmitted);
-    console.log(submitted);
-  }, [user]);
+  }, []);
 
   const [group, setGroup] = useState({
     name: '',

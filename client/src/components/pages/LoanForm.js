@@ -7,7 +7,7 @@ const LoanForm = () => {
     purpose: '',
     amount: '',
     assets: '',
-    time: 0,
+    time: '',
     scheme: '',
   });
 
@@ -21,7 +21,7 @@ const LoanForm = () => {
       purpose === '' ||
       amount === '' ||
       assets === '' ||
-      time === 0 ||
+      time === '' ||
       scheme === ''
     ) {
       swal({
@@ -60,8 +60,8 @@ const LoanForm = () => {
   return (
     <div className='wrapper wrapper33'>
       <h1>
-        <br/>
-      FINANCIAL HELP!
+        <br />
+        FINANCIAL HELP!
       </h1>
       <form onSubmit={onSubmit}>
         <div className='row'>
@@ -71,7 +71,8 @@ const LoanForm = () => {
             type='text'
             name='purpose'
             value={purpose}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
@@ -81,7 +82,8 @@ const LoanForm = () => {
             type='number'
             name='amount'
             value={amount}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
@@ -105,7 +107,8 @@ const LoanForm = () => {
             type='text'
             name='time'
             value={time}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
@@ -115,7 +118,8 @@ const LoanForm = () => {
             type='text'
             name='scheme'
             value={scheme}
-            onChange={onChange} autoComplete="off"
+            onChange={onChange}
+            autoComplete='off'
             required
           />
         </div>
@@ -138,7 +142,6 @@ const LoanForm = () => {
             <li></li>
           </ul>
       </form>
-      
     </div>
   );
 };

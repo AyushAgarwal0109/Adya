@@ -4,9 +4,13 @@ const auth = require('../middleware/auth');
 const User = require('../models/User');
 
 //Get all users with same category
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
-    const users = await User.find().sort({
+    const loggedUser = await User.findById(req.user.id);
+
+    const users = await User.find({
+      $and: [{ skill: loggedUser.skill }, { district: loggedUser.district }],
+    }).sort({
       date: -1,
     });
     res.json(users);
