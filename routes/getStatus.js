@@ -17,17 +17,4 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
-// @route   GET api/shgroup/requests
-//@desc     Get requests made to Shgroups for members
-//@access   Private
-router.get('/:id', auth, async (req, res) => {
-  try {
-    const requests = Shgjoin.find({ shg_id: req.params.id });
-    res.status(200).send(requests);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
-  }
-});
-
 module.exports = router;
