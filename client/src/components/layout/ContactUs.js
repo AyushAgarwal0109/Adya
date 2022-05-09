@@ -1,6 +1,9 @@
-import '../../assets/css/contact.css'
+import '../../assets/css/contact.css';
+import '../../assets/css/modal.css'
 import LogoMain from '../../assets/logos/logo-main-copy.png';
+import Newsletter from './Newsletter';
 import Map from './Map'
+import News from './News';
 const location = {
     address: 'Dwarka, Delhi.',
     lat: 28.5823,
@@ -36,9 +39,9 @@ const ContactUs = () => {
                             USEFUL LINKS
                         </div>
                         <div className='contact-right-links'>
-                            <div><a href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Get Involved</a></div>
-                            <div><a href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Apply for Artisan Card</a></div>
-                            <div><a href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Subscribe to Newsletter</a></div>
+                            <div><a className='con-link' href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Get Involved</a></div>
+                            <div><a className='con-link' href=''><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Apply for Artisan Card</a></div>
+                            <div><a className='con-link' href="#subnews"><i class="fa-solid fa-1x fa-circle-chevron-right"></i> Subscribe to Newsletter</a><Newsletter /></div>
                         </div>
                         <div className='social-media-buttons-contact'>
                             <a target="blank" href="tel:+91-9910545503">

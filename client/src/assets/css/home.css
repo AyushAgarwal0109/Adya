@@ -10,6 +10,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+
 .home-outer{
 background: url('../images/dash-bg.png');
 background-repeat: no-repeat;
@@ -30,10 +32,11 @@ min-height: 100vh;
     color: white !important;
     top: 58%;
     left: 50%;
-    padding: 0px 60px;
+    padding: 30px 60px;
     overflow: hidden;
     transform: translate(-50%, -50%);
     border-radius: 50px;
+    width: 80%;
   }
 
   .wrapper22 {
@@ -104,7 +107,7 @@ min-height: 100vh;
     font-size: 18px;
     color: black;
     transition-duration: 0.25s;
-    font-weight: 300;
+    font-weight: 400;
     border-radius: 30px;
   }
 
@@ -222,10 +225,6 @@ min-height: 100vh;
     }
   }
 
-  .avatar-girl{
-      width: 30%;
-  }
-
   .main{
     position: relative;
     min-height: 100vh;
@@ -330,11 +329,6 @@ min-height: 100vh;
     padding: 50px 0;
   }
 
-  .cardss-outer{
-    position: relative;
-    padding-top: 60px;
-  }
-
   .cardss{
     padding: 20px;
     margin: 50px 0px 0 0px;
@@ -343,6 +337,10 @@ min-height: 100vh;
     background-color: rgba(255, 255, 255, 0.3);
     width: 60%;
     backdrop-filter: blur(5px);
+}
+
+.cards-inner-2{
+  padding-left: 30px;
 }
 
   .headingss{
@@ -368,7 +366,34 @@ min-height: 100vh;
   }
 
   .avatar-card{
-      width: 100%;
+      width: 120%;
+      position: relative;
+      top: 17%;
+      left: -11px;
+  }
+
+  .avatar-card2{
+    width: 110%;
+    position: relative;
+    top: 24%;
+    left: -5px;
+}
+  
+  .cardspanner{
+    background: #b783e1;
+    background-attachment: fixed;
+    border-radius: 20px;
+  }
+
+  .mainin-1{
+    padding: 170px 0 100px 0;
+  }
+
+  .mainin-1 h1{
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 4em;
   }
 
   .carousel-mainin{

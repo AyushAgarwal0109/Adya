@@ -15,6 +15,9 @@ const CategoryCard = ({ connectingUsers }) => {
 
   return (
     <div className='mainin-1 right-right' align='center'>
+      <br />
+      <br />
+      <br />
       <h1>Connect with Peers </h1>
       {connectingUsers.map((connect) => {
         if (
@@ -24,9 +27,9 @@ const CategoryCard = ({ connectingUsers }) => {
         )
           return (
             <div className='cardss row' align='left'>
-              <div className='col-sm-10'>
+              <div className='col-sm-12'>
                 <div className='row'>
-                  <div className='cards-inner-1 col-sm-2'>
+                  <div className='cards-inner-1 col-sm-2 cardspanner'>
                     <img className='avatar-card' src={Avatar}></img>
                   </div>
                   <div className='cards-inner-2 col-sm-10'>
@@ -50,8 +53,6 @@ const CategoryCard = ({ connectingUsers }) => {
                     </ul>
                   </div>
                 </div>
-              </div>
-              <div className='col-sm-2'>
               </div>
             </div>
           );

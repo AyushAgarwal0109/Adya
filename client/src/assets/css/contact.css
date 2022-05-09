@@ -49,7 +49,7 @@
     font-size: 3em;
 }
 
-.contact-right-links a{
+.contact-right-links .con-link{
     border-radius: 30px;
     padding: 10px 20px 10px 10px;
     background-color: white;
@@ -58,7 +58,7 @@
     font-weight: 400;
 }
 
-.contact-right-links{
+.contact-right-links a{
     line-height: 4;
 }
 

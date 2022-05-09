@@ -5,6 +5,11 @@ import AuthContext from '../../context/auth/authContext';
 import SideNav from '../layout/SideNav';
 import '../../assets/css/home.css';
 import Updatelogo from '../../assets/logos/update-logo.png';
+import Namelogo from '../../assets/logos/name.svg';
+import passwordlogo from '../../assets/logos/password.svg';
+import skilllogo from '../../assets/logos/skill.svg';
+import shglogo from '../../assets/logos/shg.svg';
+import phonelogo from '../../assets/logos/phone.svg';
 import NavbarInside from '../layout/NavbarInside';
 import swal from 'sweetalert';
 import axios from 'axios';
@@ -61,7 +66,7 @@ const Settings = () => {
         <NavbarInside />
       </div>
       <div className='wrapper wrapper22'>
-        <h1 className='heading-settings'>Settings</h1>
+        <h1 className='heading-settings'>Manage Profile</h1>
         {user && (
           <div className='settings-box'>
             <form>
@@ -69,7 +74,7 @@ const Settings = () => {
                 <div className='form-group col-sm-6'>
                   <label htmlFor='name'>Name : </label>
                   <span>
-                    <img className='updater' src={Updatelogo}></img>
+                    <img className='updater' src={Namelogo}></img>
                   </span>
                   <input
                     type='text'
@@ -83,7 +88,7 @@ const Settings = () => {
                 <div className='form-group col-sm-6'>
                   <label htmlFor='phonenumber'>Phone Number : </label>
                   <span>
-                    <img className='updater' src={Updatelogo}></img>
+                    <img className='updater' src={phonelogo}></img>
                   </span>
                   <input
                     type='text'
@@ -99,7 +104,7 @@ const Settings = () => {
                 <div className='form-group col-sm-6'>
                   <label htmlFor='skill'>Skill : </label>
                   <span>
-                    <img className='updater' src={Updatelogo}></img>
+                    <img className='updater' src={skilllogo}></img>
                   </span>
                   <input
                     type='text'
@@ -115,7 +120,7 @@ const Settings = () => {
                     Individual/Associated with a SHG :{' '}
                   </label>
                   <span>
-                    <img className='updater' src={Updatelogo}></img>
+                    <img className='updater' src={shglogo}></img>
                   </span>
                   <input
                     type='text'
@@ -131,7 +136,7 @@ const Settings = () => {
                 <div className='form-group col-sm-6'>
                   <label htmlFor='pin'>PIN : </label>
                   <span>
-                    <img className='updater' src={Updatelogo}></img>
+                    <img className='updater' src={passwordlogo}></img>
                   </span>
                   <input
                     type='password'
@@ -146,11 +151,11 @@ const Settings = () => {
               <br></br>
               <div className='row'>
               <button className='btn-sbmt col-sm-6' onClick={(e) => handleEdit(e)}>
-                Edit
+                  EDIT
               </button>
               <input
                 type='submit'
-                value='Update'
+                value='UPDATE'
                 className='btn-sbmt col-sm-6'
                 onClick={onSubmit}
               />

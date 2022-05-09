@@ -84,10 +84,12 @@ const Shgroups = () => {
           <div>
             <NavbarInside />
           </div>
-          {/* <div className='wrapper'>
+          <div className='wrapper'>
             <form onSubmit={onSubmit}>
               <h1>SELF HELP GROUP!</h1>
-              <div className='form-group'>
+
+              <div className='row'>
+              <div className='form-group col-sm-6'>
                 <label htmlFor='name'>
                   Enter the name of your Self Help Group :{' '}
                 </label>
@@ -100,7 +102,7 @@ const Shgroups = () => {
                 />
               </div>
 
-              <div className='form-group'>
+              <div className='form-group col-sm-6'>
                 <label htmlFor='representative'>
                   Name of representative of SHG :{' '}
                 </label>
@@ -112,8 +114,11 @@ const Shgroups = () => {
                   required
                 />
               </div>
+              </div>
+              
 
-              <div className='form-group'>
+              <div className='row'>
+              <div className='form-group col-sm-6'>
                 <label htmlFor='members'>Number of members in the SHG : </label>
                 <input
                   name='members'
@@ -124,7 +129,7 @@ const Shgroups = () => {
                 />
               </div>
 
-              <div className='form-group'>
+              <div className='form-group col-sm-6'>
                 <label htmlFor='phone'>
                   Enter Phone number to contact your group :{' '}
                 </label>
@@ -138,8 +143,11 @@ const Shgroups = () => {
                   required
                 />
               </div>
+              </div>
 
-              <div className='form-group'>
+
+              <div className='row'>
+              <div className='form-group col-sm-6'>
                 <label htmlFor='business'>
                   What kind of business is run by your Self Help Group?{' '}
                 </label>
@@ -152,7 +160,7 @@ const Shgroups = () => {
                 />
               </div>
 
-              <div className='form-group'>
+              <div className='form-group col-sm-6'>
                 <label htmlFor='assistance'>
                   Why do you require our assistance?{' '}
                 </label>
@@ -163,6 +171,7 @@ const Shgroups = () => {
                   autoComplete='off'
                   required
                 />
+              </div>
               </div>
 
               <input type='submit' value='Submit' className='btn-sbmt' />
@@ -179,7 +188,7 @@ const Shgroups = () => {
                 <li></li>
               </ul>
             </form>
-          </div> */}
+          </div>
         </div>
       );
     else return <YourGroup />;

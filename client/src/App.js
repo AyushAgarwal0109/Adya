@@ -12,7 +12,7 @@ import Donate from './components/layout/Donate';
 import Banner from '../../client/src/components/layout/Banner';
 import Testimonials from './components/layout/Testimonials';
 import Finance from '../../client/src/components/pages/FinanceHelp';
-import News from './components/layout/Newsletter';
+import News from './components/layout/News';
 
 import AuthState from './context/auth/AuthState';
 import setAuthToken from './utils/setAuthToken';
