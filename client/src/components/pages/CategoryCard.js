@@ -21,12 +21,11 @@ const CategoryCard = ({ connectingUsers }) => {
       <h1>Connect with Peers </h1>
       {connectingUsers.map((connect) => {
         if (
-          connect.skill === user.skill &&
-          connect.district === user.district &&
+          // connect.district === user.district &&
           connect._id !== user._id
         )
           return (
-            <div className='cardss row' align='left'>
+            <div className='cardss row' align='left' key={connect._id}>
               <div className='col-sm-12'>
                 <div className='row'>
                   <div className='cards-inner-1 col-sm-2 cardspanner'>
@@ -45,10 +44,12 @@ const CategoryCard = ({ connectingUsers }) => {
                         <b> Individual / Associated </b> {':'} {connect.group}
                       </li>
                       <li className='li-card'>
-                        <b> District</b> {':'} {connect.district}
+                        <b> District</b> {':'}{' '}
+                        {connect.district || connect.address.district}
                       </li>
                       <li className='li-card'>
-                        <b>State</b> {':'} {connect.state}
+                        <b>State</b> {':'}{' '}
+                        {connect.state || connect.address.state}
                       </li>
                     </ul>
                   </div>

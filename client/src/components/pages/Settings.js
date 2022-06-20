@@ -17,11 +17,19 @@ import axios from 'axios';
 const Settings = () => {
   const authContext = useContext(AuthContext);
   const { user } = authContext;
-  const [userName, setUserName] = useState();
-  const [phoneNo, setPhoneNo] = useState();
-  const [group, setGroup] = useState();
-  const [skill, setSkill] = useState();
-  const [pin, setPin] = useState();
+  const [userName, setUserName] = useState('');
+  const [phoneNo, setPhoneNo] = useState('');
+  const [email, setEmail] = useState('');
+  const [age, setAge] = useState('');
+  const [dob, setDob] = useState('');
+  const [userState, setUserState] = useState('');
+  const [district, setDistrict] = useState('');
+  const [city, setCity] = useState('');
+  const [locality, setLocality] = useState('');
+  const [gender, setGender] = useState('');
+  const [group, setGroup] = useState('');
+  const [skill, setSkill] = useState('');
+  const [pin, setPin] = useState('');
   const [canEdit, setCanEdit] = useState(false);
 
   useEffect(() => {
@@ -29,9 +37,42 @@ const Settings = () => {
     // eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      setUserName(user.name);
+      setPhoneNo(user.phone);
+      setEmail(user.email);
+      setGroup(user.group);
+      setSkill(user.skill);
+      setGender(user.gender);
+      setDob(user.dob);
+      setAge(user.age);
+      if (user.address) {
+        setUserState(user.address.state);
+        setDistrict(user.address.district);
+        setCity(user.address.city);
+        setLocality(user.address.locality);
+      }
+    }
+  }, [user]);
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    const formData = { userName, phoneNo, skill, group, pin };
+    const formData = {
+      name: userName,
+      gender,
+      phoneNo,
+      email,
+      dob,
+      age,
+      state: userState,
+      district,
+      city,
+      locality,
+      skill,
+      group,
+      pin,
+    };
     const config = {
       headers: {
         'Content-Type': 'application/json',
@@ -44,11 +85,9 @@ const Settings = () => {
         icon: 'success',
       });
       authContext.loadUser();
-      setUserName('');
-      setPhoneNo('');
-      setSkill('');
-      setPin('');
-      setGroup('');
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } catch (err) {
       console.log(err);
     }
@@ -56,7 +95,6 @@ const Settings = () => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-
     setCanEdit(!canEdit);
   };
 
@@ -65,7 +103,7 @@ const Settings = () => {
       <div>
         <NavbarInside />
       </div>
-      <div className='wrapper wrapper22'>
+      <div className='wrapper wrapper22' style={{ marginTop: '200px' }}>
         <h1 className='heading-settings'>Manage Profile</h1>
         {user && (
           <div className='settings-box'>
@@ -79,10 +117,44 @@ const Settings = () => {
                   <input
                     type='text'
                     name='namee'
-                    placeholder={user.name}
+                    placeholder={userName === '' ? 'Enter your name' : userName}
                     value={userName}
                     disabled={!canEdit}
                     onChange={(e) => setUserName(e.target.value)}
+                  />
+                </div>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='gender'>Gender : </label>
+                  <span>
+                    <img className='updater' src={phonelogo}></img>
+                  </span>
+                  <input
+                    type='text'
+                    name='gender'
+                    placeholder={
+                      !gender || gender === '' ? 'Enter your gender' : gender
+                    }
+                    value={gender}
+                    disabled={!canEdit}
+                    onChange={(e) => setGender(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='email'>Email : </label>
+                  <span>
+                    <img className='updater' src={phonelogo}></img>
+                  </span>
+                  <input
+                    type='text'
+                    name='email'
+                    placeholder={
+                      email && email !== '' ? email : 'Enter your email address'
+                    }
+                    value={email}
+                    disabled={!canEdit}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className='form-group col-sm-6'>
@@ -93,10 +165,108 @@ const Settings = () => {
                   <input
                     type='text'
                     name='phone'
-                    placeholder={user.phone}
+                    placeholder={
+                      phoneNo === '' ? 'Enter your phone number' : phoneNo
+                    }
                     value={phoneNo}
                     disabled={!canEdit}
                     onChange={(e) => setPhoneNo(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='dob'>Date of Birth : </label>
+                  <span>
+                    <img className='updater' src={Namelogo}></img>
+                  </span>
+                  <input
+                    type='date'
+                    name='dob'
+                    placeholder='dd/mm/yyyy'
+                    value={dob}
+                    disabled={!canEdit}
+                    onChange={(e) => setDob(e.target.value)}
+                  />
+                </div>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='age'>Age : </label>
+                  <span>
+                    <img className='updater' src={phonelogo}></img>
+                  </span>
+                  <input
+                    type='text'
+                    name='age'
+                    placeholder={age && age !== '' ? age : 'Enter your age'}
+                    value={age}
+                    disabled={!canEdit}
+                    onChange={(e) => setAge(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='state'>State : </label>
+                  <span>
+                    <img className='updater' src={Namelogo}></img>
+                  </span>
+                  <input
+                    type='text'
+                    name='state'
+                    placeholder={
+                      userState === '' ? 'Enter your state' : userState
+                    }
+                    value={userState}
+                    disabled={!canEdit}
+                    onChange={(e) => setUserState(e.target.value)}
+                  />
+                </div>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='district'>District : </label>
+                  <span>
+                    <img className='updater' src={phonelogo}></img>
+                  </span>
+                  <input
+                    type='text'
+                    name='district'
+                    placeholder={
+                      district === '' ? 'Enter your district' : district
+                    }
+                    value={district}
+                    disabled={!canEdit}
+                    onChange={(e) => setDistrict(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className='row'>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='city'>City : </label>
+                  <span>
+                    <img className='updater' src={Namelogo}></img>
+                  </span>
+                  <input
+                    type='text'
+                    name='city'
+                    placeholder={city === '' ? 'Enter your city' : city}
+                    value={city}
+                    disabled={!canEdit}
+                    onChange={(e) => setCity(e.target.value)}
+                  />
+                </div>
+                <div className='form-group col-sm-6'>
+                  <label htmlFor='locality'>Locality : </label>
+                  <span>
+                    <img className='updater' src={phonelogo}></img>
+                  </span>
+                  <input
+                    type='text'
+                    name='locality'
+                    placeholder={
+                      locality === '' ? 'Enter your locality' : locality
+                    }
+                    value={locality}
+                    disabled={!canEdit}
+                    onChange={(e) => setLocality(e.target.value)}
                   />
                 </div>
               </div>
@@ -109,7 +279,7 @@ const Settings = () => {
                   <input
                     type='text'
                     name='skill'
-                    placeholder={user.skill}
+                    placeholder={skill === '' ? 'Enter your skill' : skill}
                     value={skill}
                     disabled={!canEdit}
                     onChange={(e) => setSkill(e.target.value)}
@@ -125,7 +295,9 @@ const Settings = () => {
                   <input
                     type='text'
                     name='group'
-                    placeholder={user.group}
+                    placeholder={
+                      group === '' ? 'Enter your group status' : group
+                    }
                     value={group}
                     disabled={!canEdit}
                     onChange={(e) => setGroup(e.target.value)}
@@ -150,15 +322,18 @@ const Settings = () => {
               </div>
               <br></br>
               <div className='row'>
-              <button className='btn-sbmt col-sm-6' onClick={(e) => handleEdit(e)}>
+                <button
+                  className='btn-sbmt col-sm-6'
+                  onClick={(e) => handleEdit(e)}
+                >
                   EDIT
-              </button>
-              <input
-                type='submit'
-                value='UPDATE'
-                className='btn-sbmt col-sm-6'
-                onClick={onSubmit}
-              />
+                </button>
+                <input
+                  type='submit'
+                  value='UPDATE'
+                  className='btn-sbmt col-sm-6'
+                  onClick={onSubmit}
+                />
               </div>
               <ul class='bg-bubbles'>
                 <li></li>

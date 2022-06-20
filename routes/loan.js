@@ -17,7 +17,9 @@ router.post('/', auth, async (req, res) => {
   const { purpose, amount, assets, time, scheme } = req.body;
 
   try {
-    let loan = await Loan.findOne({ purpose });
+    let loan = await Loan.findOne({
+      $and: [{ user: req.user.id }, { purpose: purpose }],
+    });
 
     if (loan) {
       return res.status(400).json({ msg: 'Already applied for loan.' });

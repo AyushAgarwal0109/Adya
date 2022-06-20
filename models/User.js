@@ -10,22 +10,14 @@ const UserSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  skill: {
+  email: {
     type: String,
-    required: true,
+    unique: true,
   },
-  district: {
-    type: String,
-    required: true,
-  },
-  isSubmitted: {
-    type: Boolean,
-    default: false,
-  },
-  state: {
-    type: String,
-    required: true,
-  },
+  age: Number,
+  gender: String,
+  dob: String,
+  skill: String,
   group: {
     type: String,
     required: true,
@@ -37,8 +29,10 @@ const UserSchema = mongoose.Schema({
     },
   ],
   address: {
-    type: String,
-    required: true,
+    state: String,
+    district: String,
+    city: String,
+    locality: String,
   },
   password: {
     type: String,

@@ -42,7 +42,6 @@ router.post('/', auth, async (req, res) => {
 
     // console.log(shgroup.user, req.user.id);
     let user = await User.findById(req.user.id);
-    if (user) user.isSubmitted = true;
 
     await shgroup.save();
     await user.save();

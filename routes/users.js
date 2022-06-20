@@ -17,7 +17,6 @@ router.post(
     check('skill', 'Please add skill').not().isEmpty(),
     check('district', 'Please add district').not().isEmpty(),
     check('state', 'Please add state').not().isEmpty(),
-    check('address', 'Please add address').not().isEmpty(),
     check('group', 'Please add group').not().isEmpty(),
     check('phone', 'Please enter a phone number with 10 digits').isLength({
       min: 10,
@@ -34,8 +33,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, phone, skill, district, state, address, group, password } =
-      req.body;
+    const { name, phone, skill, district, state, group, password } = req.body;
 
     try {
       let user = await User.findOne({ phone });
@@ -48,10 +46,11 @@ router.post(
         name,
         phone,
         skill,
-        address,
-        district,
         group,
-        state,
+        address: {
+          state,
+          district,
+        },
         password,
       });
 
@@ -86,17 +85,37 @@ router.post(
 );
 
 router.put('/:id', async (req, res) => {
-  const { userName, phoneNo, skill, address, district, state, group, pin } =
-    req.body;
+  const {
+    name,
+    gender,
+    phoneNo,
+    email,
+    dob,
+    age,
+    state,
+    district,
+    city,
+    locality,
+    skill,
+    group,
+    pin,
+  } = req.body;
 
+  let address = {};
+  if (state) address.state = state;
+  if (district) address.district = district;
+  if (city) address.city = city;
+  if (locality) address.locality = locality;
   //Build Contact object
   const userFields = {};
-  if (userName) userFields.name = userName;
+  if (name) userFields.name = name;
+  if (gender) userFields.gender = gender;
   if (phoneNo) userFields.phone = phoneNo;
-  if (skill) userFields.skill = skill;
+  if (email) userFields.email = email;
+  if (dob) userFields.dob = dob;
+  if (age) userFields.age = age;
   if (address) userFields.address = address;
-  if (district) userFields.district = district;
-  if (state) userFields.state = state;
+  if (skill) userFields.skill = skill;
   if (group) userFields.group = group;
   if (pin) {
     const salt = await bcrypt.genSalt(10);

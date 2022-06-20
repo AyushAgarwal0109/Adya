@@ -8,9 +8,7 @@ router.get('/', auth, async (req, res) => {
   try {
     const loggedUser = await User.findById(req.user.id);
 
-    const users = await User.find({
-      $and: [{ skill: loggedUser.skill }, { district: loggedUser.district }],
-    }).sort({
+    const users = await User.find({ skill: loggedUser.skill }).sort({
       date: -1,
     });
     res.json(users);

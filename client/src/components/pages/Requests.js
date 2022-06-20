@@ -21,27 +21,29 @@ const Requests = ({ shg_id }) => {
   }, []);
 
   const changeStatus = async (id, status) => {
-    const data = JSON.stringify({
+    const data = {
       status: status,
-    });
+    };
 
     const config = {
       headers: {
         'Content-Type': 'application/json',
       },
-      data: data,
     };
     try {
-      const res = axios.put(`/api/requests/${id}`, config);
+      const res = axios.put(`/api/requests/${id}`, data, config);
       swal({
         title: 'Success',
-        text: res.data.msg,
+        text: res.data.message,
         icon: 'success',
       });
+      fetchAllRequests();
     } catch (err) {
       console.log(err);
     }
   };
+
+  // console.log(requests);
 
   return (
     <div className='requests-out'>
@@ -53,50 +55,61 @@ const Requests = ({ shg_id }) => {
                 <div className='col-sm-2'>
                   <img className='img-requests' src={Avatar}></img>
                 </div>
-                <div className='mid-req col-sm-4'>Mansi Gulati</div>
+                <div className='mid-req col-sm-4'>{req.user_id.name}</div>
                 <div className='last-req col-sm-6'>
-                  <button className='btn-sbmt-11'>Accept</button>
-                  <button className='btn-sbmt-12'>Reject</button>
+                  <button
+                    className='btn-sbmt-11'
+                    onClick={() => changeStatus(req._id, 'accepted')}
+                  >
+                    Accept
+                  </button>
+                  <button
+                    className='btn-sbmt-12'
+                    onClick={() => changeStatus(req._id, 'dismissed')}
+                  >
+                    Reject
+                  </button>
                 </div>
               </div>
             </div>
           );
         })
       ) : (
-        <div className='requests-in'>
-          <div className='requests-1 row'>
-            <div className='col-sm-2'>
-              <img className='img-requests' src={Avatar}></img>
-            </div>
-            <div className='mid-req col-sm-4'>Mansi Gulati</div>
-            <div className='last-req col-sm-6'>
-              <button className='btn-sbmt-11'>Accept</button>
-              <button className='btn-sbmt-12'>Reject</button>
-            </div>
-          </div>
+        <>No requests to display!</>
+        // <div className='requests-in'>
+        //   <div className='requests-1 row'>
+        //     <div className='col-sm-2'>
+        //       <img className='img-requests' src={Avatar}></img>
+        //     </div>
+        //     <div className='mid-req col-sm-4'>Mansi Gulati</div>
+        //     <div className='last-req col-sm-6'>
+        //       <button className='btn-sbmt-11'>Accept</button>
+        //       <button className='btn-sbmt-12'>Reject</button>
+        //     </div>
+        //   </div>
 
-          <div className='requests-1 row'>
-            <div className='col-sm-2'>
-              <img className='img-requests' src={Avatar}></img>
-            </div>
-            <div className='mid-req col-sm-4'>Gracy Singh</div>
-            <div className='last-req col-sm-6'>
-              <button className='btn-sbmt-11'>Accept</button>
-              <button className='btn-sbmt-12'>Reject</button>
-            </div>
-          </div>
+        //   <div className='requests-1 row'>
+        //     <div className='col-sm-2'>
+        //       <img className='img-requests' src={Avatar}></img>
+        //     </div>
+        //     <div className='mid-req col-sm-4'>Gracy Singh</div>
+        //     <div className='last-req col-sm-6'>
+        //       <button className='btn-sbmt-11'>Accept</button>
+        //       <button className='btn-sbmt-12'>Reject</button>
+        //     </div>
+        //   </div>
 
-          <div className='requests-1 row'>
-            <div className='col-sm-2'>
-              <img className='img-requests' src={Avatar}></img>
-            </div>
-            <div className='mid-req col-sm-4'>Taesha Mendiratta</div>
-            <div className='last-req col-sm-6'>
-              <button className='btn-sbmt-11'>Accept</button>
-              <button className='btn-sbmt-12'>Reject</button>
-            </div>
-          </div>
-        </div>
+        //   <div className='requests-1 row'>
+        //     <div className='col-sm-2'>
+        //       <img className='img-requests' src={Avatar}></img>
+        //     </div>
+        //     <div className='mid-req col-sm-4'>Taesha Mendiratta</div>
+        //     <div className='last-req col-sm-6'>
+        //       <button className='btn-sbmt-11'>Accept</button>
+        //       <button className='btn-sbmt-12'>Reject</button>
+        //     </div>
+        //   </div>
+        // </div>
       )}
     </div>
   );

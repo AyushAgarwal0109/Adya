@@ -11,7 +11,10 @@ const Shgroups = require('../models/Shgroups');
 //@access   Private
 router.get('/:id', auth, async (req, res) => {
   try {
-    const requests = await Shgjoin.find({ shg_id: req.params.id });
+    const requests = await Shgjoin.find({
+      shg_id: req.params.id,
+      status: 'pending',
+    }).populate('user_id', 'name phone gender age address skill');
     res.status(200).send(requests);
   } catch (err) {
     console.error(err.message);
@@ -24,10 +27,10 @@ router.get('/:id', auth, async (req, res) => {
 //@access   Private
 router.post('/:id', auth, async (req, res) => {
   try {
-    const searchReq = await Shgjoin.find({
+    const searchReq = await Shgjoin.findOne({
       $and: [{ user_id: req.user.id }, { shg_id: req.params.id }],
     });
-    if (searchReq.length !== 0) {
+    if (searchReq) {
       return res
         .status(400)
         .json({ status: 'fail', message: 'Request already sent!' });
@@ -54,16 +57,31 @@ router.put('/:id', auth, async (req, res) => {
   const { status } = req.body;
   try {
     const request = await Shgjoin.findById(req.params.id);
+    if (!request) {
+      return res
+        .status(400)
+        .json({ status: 'fail', message: 'No request found' });
+    }
     request.status = status;
     await request.save();
 
     if (status === 'accepted') {
       const user = await User.findById(request.user_id);
-      user.shgList.push(request._id);
+      if (!user) {
+        return res
+          .status(400)
+          .json({ status: 'fail', message: 'No user found' });
+      }
+      user.shgList.push(request.shg_id);
       user.group = 'associated';
 
       const shg = await Shgroups.findById(request.shg_id);
-      shg.memberList.push(request._id);
+      if (!shg) {
+        return res
+          .status(400)
+          .json({ status: 'fail', message: 'No shg found' });
+      }
+      shg.memberList.push(request.user_id);
 
       await user.save();
       await shg.save();

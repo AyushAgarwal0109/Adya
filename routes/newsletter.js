@@ -8,8 +8,12 @@ router.post('/', async (req, res) => {
   try {
     let newsletter = await News.findOne({ email });
 
+    //  USE NODEMAILER
+
     if (newsletter) {
-      return res.status(400).json({ msg: 'Already applied for newsletter.' });
+      return res
+        .status(400)
+        .json({ msg: 'Already subscribed for newsletter.' });
     }
 
     newsletter = new News({

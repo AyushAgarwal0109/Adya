@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const ShgroupsSchema = mongoose.Schema({
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'users',
+    ref: 'user',
   },
   name: {
     type: String,
@@ -16,11 +16,12 @@ const ShgroupsSchema = mongoose.Schema({
   members: {
     type: Number,
     required: true,
+    default: 1,
   },
   memberList: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'users',
+      ref: 'user',
     },
   ],
   phone: {
